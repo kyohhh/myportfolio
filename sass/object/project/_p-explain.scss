@@ -1,0 +1,26 @@
+
+.p-explain {
+
+}
+
+.p-explain__block {
+    display: flex;
+    align-items: center;
+    padding: rem(14) 0 rem(19) rem(5);
+    font-size: rem(13);
+    font-weight: $font-weight-base;
+    border-bottom: 1px solid $white;
+}
+
+.p-explain__header {
+    max-width: rem(52);
+    width: 100%;
+    line-height: rem(21);
+}
+
+.p-explain__description {
+    max-width: rem(221);
+    width: 100%;
+    margin-left: rem(57);
+    line-height: rem(24);
+}

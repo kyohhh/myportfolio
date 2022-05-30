@@ -2,6 +2,7 @@
 // メディアクエリー
 // ---
 
+// @include mq(){}で書くとブレークポイントが反映される（初期値はtab??）
 @mixin mq($breakpoint: tab) {
 	@media #{map-get($breakpoints, $breakpoint)} {
 		@content;

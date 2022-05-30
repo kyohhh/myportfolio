@@ -1,0 +1,8 @@
+
+.l-news {
+    margin-top: rem(85);
+
+    @include mq(pc) {
+        margin-top: rem(70);
+    }
+}

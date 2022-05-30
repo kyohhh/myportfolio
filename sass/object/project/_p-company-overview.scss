@@ -1,0 +1,14 @@
+.p-company-overview {
+
+}
+
+.p-company-overview__inner {
+}
+
+.p-company-overview__info {
+    margin-top: rem(101);
+
+    @include mq(pc) {
+        margin-top: rem(150);
+    }
+}

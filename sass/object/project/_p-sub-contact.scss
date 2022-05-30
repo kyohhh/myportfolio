@@ -1,0 +1,53 @@
+
+.p-sub-contact {
+
+}
+
+.p-sub-contact__inner {
+    margin-top: rem(16);
+}
+
+.p-sub-contact__breadcrumbs {
+
+}
+
+.p-sub-contact__contents {
+    margin-top: rem(85);
+
+    @include mq(pc) {
+        margin-top: rem(115);
+    }
+}
+
+.p-sub-contact__content {
+    
+}
+.p-sub-contact__content:nth-child(n + 2) {
+    margin-top: rem(32);
+}
+
+.p-sub-contact__header {
+    display: flex;
+    align-items: center;
+}
+
+.p-sub-contact__title {
+    font-size: rem(14);
+    font-weight: $font-weight-base;
+    line-height: 1;
+    letter-spacing: rem(0.7);
+    
+}
+
+.p-sub-contact__required {
+    margin-left: rem(10);
+    font-size: rem(10);
+    font-weight: $font-weight-base;
+    line-height: 1;
+    padding: rem(3) rem(5);
+    background: $red;
+}
+
+.p-sub-contact__item {
+    margin-top: rem(16);
+}

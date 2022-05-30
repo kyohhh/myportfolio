@@ -1,0 +1,18 @@
+.p-blog-list__inner {
+}
+
+.p-blog-list__breadcrumbs {
+    
+}
+
+.p-blog-list__category {
+    margin-top: rem(85);
+    
+    @include mq(pc) {
+        margin-top: rem(115);
+    }
+}
+
+.p-blog-list__items {
+    margin-top: rem(40);
+}

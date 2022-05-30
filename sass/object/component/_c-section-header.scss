@@ -1,0 +1,81 @@
+
+.c-section-header {
+    position: relative;
+    text-align: center;
+
+    @include mq(pc) {
+        width: inherit;
+
+    }
+}
+
+.c-section-header__title {
+    font-family: $font-family-base;
+    font-size: rem(20);
+    font-weight: $font-weight-base;
+    line-height: rem(29);
+    letter-spacing: rem(1);
+
+
+    @include mq(pc) {
+        font-size: rem(30);
+    }
+}
+
+.c-section-header__subtitle {
+    font-family: $font-family-second;
+    font-size: rem(50);
+    font-weight: $font-weight-base;
+    line-height: rem(72);
+    letter-spacing: rem(2);
+    color: $light-yellow;
+    text-transform: capitalize; //最初の１文字大文字
+    opacity: 0.2;
+
+    // position: absolute;
+    // bottom: rem(-30);
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+
+
+    display: block;
+    margin-top: rem(-79);
+    // margin-bottom: rem(-23);//
+    
+    
+    @include mq(pc) {
+        font-size: rem(110);
+    }
+}
+
+.c-section-header__subtitle--left {
+    
+    @include mq(pc) {
+        // margin-top: rem(-25);
+        // text-align-last: left;
+        position: absolute;
+        left: 0;
+        bottom: rem(-41);
+    }
+}
+
+.c-section-header__subtitle--right {
+    @include mq (pc) {
+        // margin-top: rem(-25);
+        position: absolute;
+        right: 0;
+        bottom: rem(-30);
+        // text-align: right;
+    }
+}
+
+.c-section-header__subtitle--contact {
+
+    @include mq(pc) {
+        // margin-top: rem(-25);
+        // text-align-last: left;
+        position: absolute;
+        left: 0;
+        // top: rem(76);
+    }
+}

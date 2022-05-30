@@ -1,0 +1,30 @@
+
+.c-breadcrumbs {
+    // font-family: 'Roboto', sans-serif;
+    font-size: rem(16);
+    font-weight: $font-weight-base;
+    line-height: rem(19);
+    letter-spacing: rem(1);
+
+    @include mq (pc) {
+        letter-spacing: rem(2);
+    }
+}
+
+.c-breadcrumbs__list {
+    display: flex;
+
+}
+
+.c-breadcrumbs__item {
+}
+
+.c-breadcrumbs__item:not(:first-child) {
+    margin-left: rem(2);
+}
+
+.c-breadcrumbs__link {
+    display: block;
+    height: inherit;
+
+}

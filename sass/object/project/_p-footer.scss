@@ -1,0 +1,112 @@
+
+.p-footer {
+    padding: rem(42) 0;
+    letter-spacing: rem(1.2);
+
+    @include mq(pc) {
+        padding: rem(30) 0;
+    }
+}
+
+.p-footer__pagetop {
+    position: fixed;
+    bottom: rem(41);
+    right: rem(20);
+    width: rem(45);
+    height: rem(45);
+
+    @include mq(pc) {
+        bottom: rem(33);
+        right: rem(31);
+    }
+}
+
+.p-footer__pagetop-link {
+    background: $white;
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    transition: .3s ease;
+}
+.p-footer__pagetop-link:hover {
+    @include mq(pc) {
+        background: $mid-gray;
+        transition: .3s ease;
+    }
+}
+
+.p-footer__pagetop-link::after {
+    content: "";
+    width: rem(19);
+    height: rem(19);
+    border-top: rem(2) solid $mid-gray;
+    border-right: rem(2) solid $mid-gray;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: rem(19);
+    right: rem(13);
+    border-radius: 1px 1px 1px 1px / 1px 1px 1px 1px;
+    @include mq(pc) {
+    }
+}
+.p-footer__pagetop-link:hover:after {
+    @include mq(pc) {
+        border-top: rem(2) solid $white;
+        border-right: rem(2) solid $white;
+    }
+}
+
+.p-footer__content {
+    @include mq(pc) {
+        height: rem(39);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}
+
+.p-footer__inner {
+    text-align: center;
+
+    @include mq(pc) {
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 rem(32);
+    }
+}
+
+.p-footer__content {
+
+}
+
+.p-footer__logo {
+    @include mq(pc) {
+        height: rem(40);
+    }
+}
+
+.footer__link {
+    display: inline-block;
+    img {
+        display: inline-block;
+        line-height: rem(32);
+        width: rem(70);
+    }
+}
+
+
+.p-footer__copy {
+    font-size: rem(11);
+    line-height: rem(16);
+    letter-spacing: rem(1.2);
+    margin-top: rem(27);
+
+    @include mq(pc) {
+        font-size: rem(15);
+        line-height: rem(35);
+        margin-top: rem(64);
+        text-align: center;
+    }
+}

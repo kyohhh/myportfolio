@@ -1,0 +1,62 @@
+
+.p-contact {
+    background: $gray;
+    padding: rem(67) 0 rem(64);
+
+    @include mq(pc) {
+        padding: rem(151) 0 rem(149);
+    }
+}
+
+.p-contact__header {
+    @include mq(pc) {
+    }
+}
+
+.p-contact__header-title {
+    @include mq(pc) {
+        text-align: left;
+    }
+}
+
+.p-contact__inner {
+
+    @include mq(pc) {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.p-contact__body {
+    margin-top: rem(29);
+
+    @include mq(pc) {
+        width: 100%;
+        margin: rem(27) auto 0;
+    }
+}
+
+.p-contact__text {
+    font-size: rem(16);
+    font-weight: $font-weight-base;
+    line-height: rem(23);
+    letter-spacing: rem(2);
+
+    @include mq(pc) {
+        text-align: center;
+
+    }
+}
+
+.p-contact__btn {
+    max-width: rem(335);
+    margin: rem(47) auto 0;
+
+    @include mq(pc) {
+        max-width: rem(360);
+        margin: rem(61) auto 0;
+
+        position: relative;
+        overflow: hidden;
+    }
+}

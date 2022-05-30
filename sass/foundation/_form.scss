@@ -41,10 +41,10 @@ select {
 	margin-right: 0;
 	margin-left: 0;
 	padding: 4px;
-	border: 1px solid #ccc;
+	// border: 1px solid #ccc;
 	border-radius: 0;
 	outline: none;
-	background: none;
+	// background: none;
 	font-size: 16px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -202,7 +202,7 @@ input[type="search"]::-webkit-search-decoration {
 input:hover,
 textarea:hover,
 select:hover {
-	border-color: #666;
+	border-color: $yellow;
 }
 
 input[type="radio"] + span:hover,

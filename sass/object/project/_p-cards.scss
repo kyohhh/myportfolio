@@ -1,0 +1,48 @@
+.p-cards {
+    @include mq(pc) {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: rem(1100);
+        width: 100%;
+    }
+}
+
+///////////
+//sp
+///////////
+.p-cards__item:nth-child(n + 2) {
+    margin-top: rem(24);
+
+    @include mq(pc) {
+        margin-left: rem(19);
+    }
+}
+
+.p-cards__item:nth-child(2) {
+    @include mq(pc) {
+        margin-top: 0;
+    }
+}
+
+.p-cards__item:nth-child(3) {
+    @include mq(pc) {
+        margin-top: 0;
+    }
+}
+
+
+//////////
+//pc
+//////////
+
+.p-cards__item:nth-child(3n + 1) {
+    @include mq(pc) {
+        margin-left: 0;
+    }
+}
+
+.p-cards__item:nth-child(n + 4) {
+    @include mq(pc) {
+        margin-top: rem(48);
+    }
+}

@@ -1,0 +1,26 @@
+.p-contact-textarea {
+
+}
+
+.p-contact-textarea__text {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	// background-color: transparent;
+	background-color: $white;
+	background-image: none;
+	// border: 1px solid #ccc;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: rem(16);
+	height: rem(250);
+	padding: rem(5) rem(10);
+	width: 100%;
+}
+
+.p-contact-textarea__text:focus {
+    border: 1px solid $yellow;
+    box-shadow: none;
+	outline: none;
+}

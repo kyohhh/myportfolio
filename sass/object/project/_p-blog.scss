@@ -1,0 +1,54 @@
+.p-blog {
+
+    @include mq(pc) {
+
+    }
+}
+
+.p-blog__inner {
+    max-width: rem(375);
+
+    @include mq(pc) {
+
+    }
+}
+
+.p-blog__header {
+    @include mq(pc) {
+        position: relative;
+    }
+}
+
+.p-blog__header-title {
+    @include mq(pc) {
+        position: absolute;
+        bottom: rem(4);
+        right: 0;
+    }
+}
+
+.p-blog__header-subtitle {
+    @include mq(pc) {
+    }
+}
+
+.p-blog__items {
+    margin-top: rem(71);
+    @include mq(pc) {
+        margin-top: rem(44);
+    }
+}
+
+
+.p-blog__btn {
+    max-width: rem(335);
+    margin: rem(24) auto 0;
+
+    @include mq(pc) {
+        max-width: rem(360);
+        margin: rem(44) auto 0;
+
+        position: relative;
+        overflow: hidden;
+    }
+}

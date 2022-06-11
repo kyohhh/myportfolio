@@ -22,7 +22,7 @@
     justify-content: space-between;
     padding: 0 rem(21) 0 rem(22);
 
-    @include mq(pc) {
+    @include mq(tab) {
     padding-right: 0;
     padding-left: rem(33);
     }
@@ -42,7 +42,7 @@
     img {
         width: rem(71);
 
-        @include mq(pc) {
+        @include mq(tab) {
             width: rem(94);
         }
     }

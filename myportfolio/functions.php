@@ -66,6 +66,17 @@ add_action('wp_enqueue_scripts', 'my_script_init');
  * 参考：https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
  */
 
+//functions.php
+function register_my_menus() {
+	register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
+	//'「メニューの位置」の識別子' => 'メニューの説明の文字列',
+		'main' => 'メインメニュー',
+		'footer'  => 'フッターメニュー',
+	) );
+}
+add_action( 'after_setup_theme', 'register_my_menus' );
+
+
 
 /**
  * ウィジェットの登録
@@ -149,3 +160,56 @@ function my_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'my_excerpt_more' );
+
+
+
+
+
+// wp_nav_menuのliにclass追加
+function add_additional_class_on_li($classes, $item, $args)
+{
+	if (isset($args->add_li_class)) {
+    $classes['class'] = $args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+// wp_nav_menuのaにclass追加
+function add_additional_class_on_a($classes, $item, $args)
+{
+	if (isset($args->add_li_class)) {
+    $classes['class'] = $args->add_a_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
+
+
+
+// ==============
+// カスタム投稿タイプ
+// ==============
+// メインクエリの変更
+// ブログ記事一覧(9件表示)
+function change_set_blog($query){
+	if(is_admin() || !$query->is_main_query()){
+		return;
+	}
+	if ($query->is_post_type_archive('blog') ) {
+		$query->set('post_per_page', '9');
+		return;
+	}
+}
+add_action( 'pre_get_posts', 'change_set_blog' );
+
+// function change_set_blog($query){
+// 	if(is_admin() || !$query->is_main_query()){
+// 		return;
+// 	}
+// 	if($query->is_front_page()){
+// 		$query->set('post_per_page', '3');
+// 		return;
+// 	}
+// }
+// add_action( 'pre_get_posts', 'change_set_blog' );

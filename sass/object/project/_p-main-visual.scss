@@ -1,7 +1,7 @@
 .p-main-visual {
     position: relative;
     // height: 100vh;    //保留
-    @include mq(pc) {
+    @include mq(tab) {
         height: 100%;
     }
 }
@@ -16,7 +16,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    @include mq(pc) {
+    @include mq(tab) {
     }
 }
 
@@ -24,7 +24,7 @@
     font-size: rem(28);
     line-height: rem(28);
 
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(50);
         line-height: rem(50);
         font-weight: $bold;
@@ -36,7 +36,7 @@
     line-height: rem(20);
     margin-top: rem(24);
 
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(25);
         line-height: rem(25);
         font-weight: $bold;

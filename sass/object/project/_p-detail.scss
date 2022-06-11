@@ -1,0 +1,57 @@
+.p-detail {
+
+}
+
+.p-detail__inner {
+
+}
+
+
+.p-detail__title {
+    font-size: rem(20);
+    font-weight: $font-weight-base;
+    line-height: rem(35);
+    letter-spacing: rem(0.4);
+
+    @include mq(tab){
+        font-size: rem(23);
+        font-weight: $medium;
+    }
+
+}
+
+.p-detail__info,
+.p-detail__body {
+    display: flex;
+    margin-top: rem(16);
+    align-items: center;
+
+    @include mq(tab){
+        margin-top: rem(32);
+    }
+}
+
+.p-detail__date {
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: rem(32);
+    letter-spacing: rem(0.4);
+}
+
+.p-detail__category {
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: rem(23);
+    letter-spacing: rem(2);
+    border: rem(1) solid $white;
+    padding: rem(8) rem(20);
+    margin-left: rem(24);
+}
+
+.p-detail__body {
+    margin-top: rem(16);
+
+    @include mq(tab){
+        margin-top: rem(32);
+    }
+}

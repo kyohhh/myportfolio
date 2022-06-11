@@ -1,0 +1,47 @@
+.p-posts {
+    @include mq(tab) {
+        display: flex;
+        // flex-wrap: wrap;
+        max-width: rem(1100);
+        width: 100%;
+    }
+}
+
+///////////
+//sp
+///////////
+.p-posts__item:nth-child(n + 2) {
+    margin-top: rem(48);
+
+    @include mq(tab) {
+    }
+}
+
+// .p-posts__item:nth-child(2) {
+//     @include mq(tab) {
+//         margin-top: 0;
+//     }
+// }
+
+// .p-posts__item:nth-child(3) {
+//     @include mq(tab) {
+//         margin-top: 0;
+//     }
+// }
+
+
+//////////
+//tab
+//////////
+
+.p-posts__item:nth-child(even) {
+    @include mq(tab) {
+        margin-left: 48;
+    }
+}
+
+.p-posts__item:nth-child(n + 3) {
+    @include mq(tab) {
+        margin-top: rem(114);
+    }
+}

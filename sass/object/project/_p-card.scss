@@ -5,15 +5,13 @@
     background: $white;
     color: $gray;
     transition: .3s ease;
-
-    @include mq(pc) {
-        max-width: calc(33.3333% - rem(25) * 2 / 3);
-        width: 100%;
+    
+    @include mq(tab) {
     }
 }
 
 .p-card:hover {
-    @include mq (pc) {
+    @include mq (tab) {
         background: $mid-gray;
         color: $white;
         transition: .3s ease;
@@ -54,7 +52,7 @@
     letter-spacing: rem(2);
     text-transform: capitalize;
 
-    @include mq(pc) {
+    @include mq(tab) {
         top: rem(-20);
         left: rem(-14);
     }
@@ -64,7 +62,7 @@
     letter-spacing: rem(1);
     padding: rem(4) rem(23) rem(16);
 
-    @include mq (pc) {
+    @include mq (tab) {
         padding: rem(4) rem(23) rem(17);
     }
 }
@@ -81,7 +79,7 @@
     line-height: rem(26);
     margin-top: rem(2);
 
-    @include mq (pc) {
+    @include mq (tab) {
         margin-top: rem(6);
     }
 }
@@ -98,7 +96,7 @@
     line-height: rem(26);
     margin-top: rem(7);
 
-    @include mq (pc) {
+    @include mq (tab) {
         margin-top: rem(8);
     }
 
@@ -109,7 +107,7 @@
     color: $gray;
     padding: 0 rem(3);
     letter-spacing: rem(1);
-    @include mq (pc) {
+    @include mq (tab) {
         padding: 0 rem(6);
     }
 }

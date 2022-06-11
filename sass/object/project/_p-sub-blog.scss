@@ -1,0 +1,18 @@
+.p-sub-blog__inner {
+}
+
+.p-sub-blog__breadcrumbs {
+    
+}
+
+.p-sub-blog__category {
+    margin-top: rem(85);
+    
+    @include mq(tab) {
+        margin-top: rem(115);
+    }
+}
+
+.p-sub-blog__items {
+    margin-top: rem(40);
+}

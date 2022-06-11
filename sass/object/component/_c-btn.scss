@@ -1,44 +1,30 @@
-
 .c-btn {
-    position: relative;
-    overflow: hidden;
     display: inline-block;
     width: 100%;
     padding: rem(9) 0;
     text-align: center;
     border: 1px solid $white;
-	// color: $white;
+	color: $white;
 
     font-size: rem(20);
     letter-spacing: rem(2);
-    // background: $mid-gray;
-    // z-index: 1;
+    background: $mid-gray;
+    z-index: 1;
 
-    @include mq(pc) {
+    @include mq(tab) {
+        position: relative;
+        overflow: hidden;
 		padding: rem(17) 0;
         font-size: rem(16);
     }
-
-	span {
-        @include mq(pc) {
-            color: $white;
-            z-index: 10;
-		}
-	}
 }
 
 .c-btn:hover {
-	span {
-        @include mq(pc) {
-			// color: $mid-gray;
-            color: red;
-            z-index: 10;
-		}
-	}
+    color: $mid-gray;
 }
 
 .c-btn::before {
-    @include mq(pc){
+    @include mq(tab){
         content: '';
         position: absolute;
         top: 0;
@@ -48,16 +34,15 @@
         background: $white;
         transform: translateX(-100%);
         transition: .3s ease;
-        z-index: 1;
+        z-index: -1;
     }
 }
 
 .c-btn:hover::before {
 
-    @include mq(pc){
+    @include mq(tab){
         transform: translateX(0);
         transition: .3s ease;
-        z-index: 1;
     }
 }
 
@@ -72,7 +57,7 @@
     color: $white;
     background: $mid-gray;
 
-    @include mq(pc){
+    @include mq(tab){
         // max-width: rem(134);
         padding: rem(3) rem(25);
         font-size: rem(16);
@@ -85,14 +70,14 @@
 }
 
 .c-btn--news:hover {
-    @include mq(pc){
+    @include mq(tab){
         color: $white;
     }
 }
 
 .c-btn--news::before {
 
-    @include mq(pc){
+    @include mq(tab){
         content: '';
         position: absolute;
         top: 0;
@@ -108,7 +93,7 @@
 
 .c-btn--news:hover::before {
 
-    @include mq(pc){
+    @include mq(tab){
         transform: translateX(0);
         transition: .3s ease;
         z-index: 10;

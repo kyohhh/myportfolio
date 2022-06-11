@@ -25,7 +25,7 @@
     line-height: rem(43.44);
     font-weight: bold;
 
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(35);
         line-height: rem(35);
     }

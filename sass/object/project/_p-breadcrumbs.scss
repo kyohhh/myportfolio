@@ -1,29 +1,29 @@
 
-.c-breadcrumbs {
+.p-breadcrumbs {
     // font-family: 'Roboto', sans-serif;
     font-size: rem(16);
     font-weight: $font-weight-base;
     line-height: rem(19);
     letter-spacing: rem(1);
 
-    @include mq (pc) {
+    @include mq (tab) {
         letter-spacing: rem(2);
     }
 }
 
-.c-breadcrumbs__list {
+.p-breadcrumbs__list {
     display: flex;
 
 }
 
-.c-breadcrumbs__item {
+.p-breadcrumbs__item {
 }
 
-.c-breadcrumbs__item:not(:first-child) {
+.p-breadcrumbs__item:not(:first-child) {
     margin-left: rem(2);
 }
 
-.c-breadcrumbs__link {
+.p-breadcrumbs__link {
     display: block;
     height: inherit;
 

@@ -42,16 +42,29 @@
                 </a>
             </h1>
             <!-- pc-nav -->
-            <div class="p-header__pc-nav p-pc-nav">
-                <ul class="p-pc-nav__items">
+            <nav class="p-header__pc-nav p-pc-nav">
+                <?php
+                        $defaults = array(
+                            'theme_location'  => 'main', //functions.php「メニューの位置」の識別子
+                            'container'       => false,
+                            // 'container_class' => 'p-header__pc-nav p-pc-nav',
+                            'menu_class'      => 'p-pc-nav__items',
+                            'depth'           => 0,
+                            'add_li_class'    => 'p-pc-nav__item', // liタグへclass追加
+                            'add_a_class'     => '' // aタグへclass追加
+                        );
+                        wp_nav_menu( $defaults );
+                    ?>
+                <!-- <ul class="p-pc-nav__items">
                     <li class="p-pc-nav__item"><a href="#news">お知らせ</a></li>
                     <li class="p-pc-nav__item"><a href="#content">事業内容</a></li>
                     <li class="p-pc-nav__item"><a href="#works">制作実績</a></li>
                     <li class="p-pc-nav__item"><a href="#overview">企業概要</a></li>
                     <li class="p-pc-nav__item"><a href="#blog">ブログ</a></li>
                     <li class="p-pc-nav__item p-pc-nav__item--white"><a href="#contact">お問い合わせ</a></li>
-                </ul>
-            </div>
+                </ul> -->
+            </nav>
+
             <!-- ハンバーガー -->
             <div id="MenuButton" class="p-header__menu c-hamburger js-hamburger">
                 <span></span>

@@ -14,7 +14,7 @@
     display: block;
     padding-top: 80%; // 高さ/横幅*100%
 
-    @include mq(pc) {
+    @include mq(tab) {
         padding-top: 33.363636%; // 高さ/横幅*100%
     }
 }

@@ -2,7 +2,7 @@
 .c-category {
     // margin-top: rem(85);
 
-    @include mq (pc) {
+    @include mq (tab) {
         // margin-top: rem(116);
     }
 }
@@ -17,7 +17,7 @@
     line-height: rem(23);
     letter-spacing: rem(2);
     padding: rem(7) 0;
-    @include mq (pc) {
+    @include mq (tab) {
         padding: 0;
     }
 }
@@ -29,7 +29,7 @@
 .c-category__item:nth-child(n + 2) {
     // margin-left: rem(24);
 
-    @include mq (pc) {
+    @include mq (tab) {
         margin-left: rem(31);
     }
 }
@@ -39,7 +39,7 @@
     height: 100%;
     padding: rem(7) rem(8);
 
-    @include mq (pc) {
+    @include mq (tab) {
         padding: rem(3) rem(8);
     }
 }
@@ -51,7 +51,7 @@
     display: inline-block;
     height: inherit;
 
-    @include mq (pc) {
+    @include mq (tab) {
         padding: rem(3) rem(8);
     }
 }

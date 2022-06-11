@@ -3,25 +3,25 @@
     background: $gray;
     padding: rem(67) 0 rem(64);
 
-    @include mq(pc) {
+    @include mq(tab) {
         padding: rem(151) 0 rem(149);
     }
 }
 
 .p-contact__header {
-    @include mq(pc) {
+    @include mq(tab) {
     }
 }
 
 .p-contact__header-title {
-    @include mq(pc) {
+    @include mq(tab) {
         text-align: left;
     }
 }
 
 .p-contact__inner {
 
-    @include mq(pc) {
+    @include mq(tab) {
         margin: 0 auto;
         width: 100%;
     }
@@ -30,7 +30,7 @@
 .p-contact__body {
     margin-top: rem(29);
 
-    @include mq(pc) {
+    @include mq(tab) {
         width: 100%;
         margin: rem(27) auto 0;
     }
@@ -42,7 +42,7 @@
     line-height: rem(23);
     letter-spacing: rem(2);
 
-    @include mq(pc) {
+    @include mq(tab) {
         text-align: center;
 
     }
@@ -52,11 +52,8 @@
     max-width: rem(335);
     margin: rem(47) auto 0;
 
-    @include mq(pc) {
+    @include mq(tab) {
         max-width: rem(360);
         margin: rem(61) auto 0;
-
-        position: relative;
-        overflow: hidden;
     }
 }

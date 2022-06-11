@@ -19,22 +19,26 @@
 </div>
 
 <!--  -->
+<!-- パンくずリスト -->
+<div class="l-breadcrumbs p-breadcrumbs">
+    <div class="l-inner">
+        <ul class="p-breadcrumbs__list">
+            <li class="p-breadcrumbs__item">
+                <a href="<?php echo esc_url( home_url('/')); ?>" class="p-breadcrumbs__link">トップ</a>
+            </li>
+            <li class="p-breadcrumbs__item">
+                <span>></span>
+            </li>
+            <li class="p-breadcrumbs__item">
+                <a href="" class="p-breadcrumbs__link"><?php the_title(); ?></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
 <section class="l-sub-contact p-sub-contact">
-    <div class="l-inner p-sub-contact__inner">
-        <!-- パンくずリスト -->
-        <div class="p-sub-contact__breadcrumbs c-breadcrumbs">
-            <ul class="c-breadcrumbs__list">
-                <li class="c-breadcrumbs__item">
-                    <a href="<?php echo esc_url( home_url('/')); ?>" class="c-breadcrumbs__link">トップ</a>
-                </li>
-                <li class="c-breadcrumbs__item">
-                    <span>></span>
-                </li>
-                <li class="c-breadcrumbs__item">
-                    <a href="<?php echo esc_url( home_url('/')); ?>" class="c-breadcrumbs__link">ブログ記事一覧</a>
-                </li>
-            </ul>
-        </div>
+    <div class="l-inner">
         <!-- コンタクトフォーム -->
         <div class="p-sub-contact__contents">
             <div class="p-sub-contact__content">
@@ -82,8 +86,11 @@
                     <textarea class="p-contact-textarea__text"></textarea>
                 </div>
             </div>
+            <!-- 送信ボタン -->
+            <div class="p-sub-contact__content p-sub-contact__content--button p-contact-button">
+                <input class="p-contact-button__submit" type="submit" value="送信">
+            </div>
         </div>
-
     </div>
 </section>
 

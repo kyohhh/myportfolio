@@ -1,0 +1,7 @@
+.l-sub-overview {
+    margin-top: rem(103);
+
+    @include mq(tab) {
+        margin-top: rem(146);
+    }
+}

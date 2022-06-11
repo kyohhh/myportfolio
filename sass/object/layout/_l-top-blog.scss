@@ -2,7 +2,7 @@
 .l-top-blog {
     margin: rem(98) 0 0;
 
-    @include mq(pc) {
+    @include mq(tab) {
         margin: rem(217) 0 0;
     }
 }

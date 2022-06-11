@@ -1,0 +1,7 @@
+.l-404 {
+    margin-top: rem(130);
+
+    @include mq(tab) {
+        margin-top: rem(200);
+    }
+}

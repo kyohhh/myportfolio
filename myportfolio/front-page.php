@@ -1,8 +1,32 @@
 <?php get_header(); ?>
 
+<!-- linkの変数 -->
+<?php
+$home = esc_url( home_url( '/' ) );
+$news = esc_url( home_url( '/news/' ) );
+$content = esc_url( home_url( '/content/' ) );
+$works = esc_url( home_url( '/works/' ) );
+$overview = esc_url( home_url( '/overview/' ) );
+$content = esc_url( home_url( '/content/' ) );
+$blog = esc_url( home_url( '/blog/' ) );
+$contact = esc_url( home_url( '/contact/' ) );
+?>
+
 <!-- ドロワーメニュー -->
 <!-- sp-nav -->
-<div id="DrawerMenu" class="p-sp-nav js-drawer-menu">
+<nav id="DrawerMenu" class="p-sp-nav js-drawer-menu">
+    <?php
+        // $defaults = array(
+        //     'theme_location'  => 'main', //functions.php「メニューの位置」の識別子
+            // 'container'       => false,
+        //     'container_class' => 'aa',
+        //     'menu_class'      => 'p-sp-nav__items',
+        //     'depth'           => 0,
+        //     'add_li_class'    => 'p-sp-nav__item', // liタグへclass追加
+        //     'add_a_class'     => '' // aタグへclass追加
+        // );
+        // wp_nav_menu( $defaults );
+    ?>
     <ul class="p-sp-nav__items">
         <li class="p-sp-nav__item"><a href="#news">お知らせ</a></li>
         <li class="p-sp-nav__item"><a href="#content">事業内容</a></li>
@@ -11,7 +35,7 @@
         <li class="p-sp-nav__item"><a href="#blog">ブログ</a></li>
         <li class="p-sp-nav__item"><a href="#contact">お問い合わせ</a></li>
     </ul>
-</div>
+</nav>
 
 <!-- mv swiper -->
 <div class="p-main-visual swiper js-mv-swiper js-mv">
@@ -54,24 +78,45 @@
 </div>
 
 <!-- news -->
-<div class="l-top-news p-news" id="news">
+<section class="l-top-news p-news" id="news">
     <div class="p-news__inner l-inner">
         <div class="p-news__contents">
+            <?php
+                $news_query = new WP_Query(
+                    array(
+                        'post_type'      => 'post',
+                        // 'category_name' => 'news',
+                        'posts_per_page' => 1,
+                    )
+                );
+            ?>
+            <?php if ( $news_query->have_posts() ) : ?>
+            <?php while ( $news_query->have_posts() ) : ?>
+            <?php $news_query->the_post(); ?>
+
+
             <div class="p-news__content">
                 <div class="p-news__info">
-                    <time class="p-news__date" datetime="2020-07-20">2020.07.20</time>
+                    <time class="p-news__date" datetime="<?php the_time(' c '); ?>"><?php the_time('Y.m.d'); ?></time>
                     <span class="p-news__category">お知らせ</span>
                 </div>
                 <div class="p-news__body">
-                    <a href="#" class="p-news__link">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a>
+                    <a href="<?php the_permalink();?>" class="p-news__link"><?php the_title(); ?></a>
                 </div>
             </div>
+
+            <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
+
+
+
         </div>
         <div class="p-news__btn">
-            <a href="<?php echo esc_url( home_url( '/news-list/' ) ); ?>" class="c-btn--news">すべて見る</a>
+            <a href="<?php echo $news ?>" class="c-btn--news">すべて見る</a>
         </div>
     </div>
-</div>
+</section>
 
 <!-- content -->
 <section class="l-top-content p-content" id="content">
@@ -141,9 +186,7 @@
                     テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                 </p>
                 <div class="p-works__btn">
-                    <a href="#" class="c-btn">
-                        <span>詳しく見る</span>
-                    </a>
+                    <a href="<?php echo $works ?>" class="c-btn">詳しく見る</a>
                 </div>
             </div>
         </div>
@@ -157,8 +200,8 @@
             <h2 class="c-section-header__title">企業概要</h2>
             <span class="c-section-header__subtitle c-section-header__subtitle--left">overview</span>
         </div>
-        <div class="p-overview__item">
-            <div class="p-overview__content">
+        <div class="p-overview__items">
+            <div class="p-overview__item">
                 <figure class="p-overview__img">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/overview.jpg" alt="企業概要">
                 </figure>
@@ -168,7 +211,7 @@
                         テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                     </p>
                     <div class="p-overview__btn">
-                        <a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>" class="c-btn">詳しく見る</a>
+                        <a href="<?php echo $overview ?>" class="c-btn">詳しく見る</a>
                     </div>
                 </div>
             </div>
@@ -230,9 +273,24 @@
                     </div>
                 </div>
             </a>
+            <!-- <a href="#" class="p-cards__item p-card">
+                <figure class="p-card__img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/blog03.jpg" alt="ブログ3">
+                </figure>
+                <div class="p-card__content">
+                    <div class="p-card__body">
+                        <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3>
+                        <p class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</p>
+                    </div>
+                    <div class="p-card__info">
+                        <span class="p-card__category">カテゴリ</span>
+                        <time class="p-card__date" datetime="2021-07-20">2021.07.20</time>
+                    </div>
+                </div>
+            </a> -->
         </div>
         <div class="p-blog__btn">
-            <a href="<?php echo esc_url( home_url( '/blog-list/' ) ); ?>" class="c-btn">詳しく見る</a>
+            <a href="<?php echo $blog ?>" class="c-btn">詳しく見る</a>
         </div>
     </div>
 </section>
@@ -248,7 +306,7 @@
             <div class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
         </div>
         <div class="p-contact__btn">
-            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">お問い合わせへ</a>
+            <a href="<?php echo $contact ?>" class="c-btn">お問い合わせへ</a>
         </div>
     </div>
 </section>

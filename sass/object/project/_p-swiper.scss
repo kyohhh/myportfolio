@@ -23,7 +23,7 @@
 .swiper-container {
     position: relative;
 
-    @include mq(pc) {
+    @include mq(tab) {
         display: block;
         max-width: rem(557);
         width: 100%;
@@ -45,7 +45,7 @@
     height: auto;
     width: 100%;
 
-    @include mq (pc)  {
+    @include mq (tab)  {
         max-width: rem(557) !important;
     }
 }
@@ -53,7 +53,7 @@
 .swiper-pagination.js-works-pagination {
         bottom: rem(-22) !important;
 
-    @include mq (pc){
+    @include mq (tab){
         bottom: rem(48) !important;
         left: rem(-21) !important;
     }

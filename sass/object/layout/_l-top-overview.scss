@@ -2,7 +2,7 @@
 .l-top-overview {
     margin-top: rem(120);
 
-    @include mq(pc) {
+    @include mq(tab) {
         margin-top: rem(208);
     }
 }

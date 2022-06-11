@@ -1,0 +1,5 @@
+.l-pagenavi {
+    @include mq(tab) {
+        margin-top: rem(104);
+    }
+}

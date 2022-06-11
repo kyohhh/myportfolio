@@ -1,9 +1,11 @@
 .p-cards {
-    @include mq(pc) {
-        display: flex;
-        flex-wrap: wrap;
+    @include mq(tab) {
         max-width: rem(1100);
         width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(25);
     }
 }
 
@@ -13,36 +15,36 @@
 .p-cards__item:nth-child(n + 2) {
     margin-top: rem(24);
 
-    @include mq(pc) {
+    @include mq(tab) {
         margin-left: rem(19);
     }
 }
 
 .p-cards__item:nth-child(2) {
-    @include mq(pc) {
+    @include mq(tab) {
         margin-top: 0;
     }
 }
 
 .p-cards__item:nth-child(3) {
-    @include mq(pc) {
+    @include mq(tab) {
         margin-top: 0;
     }
 }
 
 
 //////////
-//pc
+//tab
 //////////
 
 .p-cards__item:nth-child(3n + 1) {
-    @include mq(pc) {
+    @include mq(tab) {
         margin-left: 0;
     }
 }
 
 .p-cards__item:nth-child(n + 4) {
-    @include mq(pc) {
+    @include mq(tab) {
         margin-top: rem(48);
     }
 }

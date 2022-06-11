@@ -2,7 +2,7 @@
 .l-news {
     margin-top: rem(85);
 
-    @include mq(pc) {
+    @include mq(tab) {
         margin-top: rem(70);
     }
 }

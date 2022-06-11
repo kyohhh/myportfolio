@@ -3,7 +3,7 @@
     display: none;
     height: inherit;
 
-    @include mq(pc) {
+    @include mq(tab) {
         display: initial;
     }
 }

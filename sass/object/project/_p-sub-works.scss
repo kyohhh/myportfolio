@@ -1,0 +1,8 @@
+
+
+.p-sub-works__items {
+    margin-top: rem(20);
+    @include mq (tab) {
+        margin-top: rem(40);
+    }
+}

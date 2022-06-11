@@ -18,25 +18,29 @@
     </div>
 </div>
 
+
+<!-- パンくずリスト -->
+<div class="l-breadcrumbs p-breadcrumbs">
+    <div class="l-inner">
+        <ul class="p-breadcrumbs__list">
+            <li class="p-breadcrumbs__item">
+                <a href="<?php echo esc_url( home_url('/')); ?>" class="p-breadcrumbs__link">トップ</a>
+            </li>
+            <li class="p-breadcrumbs__item">
+                <span>></span>
+            </li>
+            <li class="p-breadcrumbs__item">
+                <a href="" class="p-breadcrumbs__link"><?php the_title(); ?></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <!--  -->
-<section class="l-company-overview p-company-overview">
-    <div class="l-inner p-company-overview__inner">
-        <!-- パンくずリスト -->
-        <div class="p-company-overview__breadcrumbs c-breadcrumbs">
-            <ul class="c-breadcrumbs__list">
-                <li class="c-breadcrumbs__item">
-                    <a href="<?php echo esc_url( home_url('/')); ?>" class="c-breadcrumbs__link">トップ</a>
-                </li>
-                <li class="c-breadcrumbs__item">
-                    <span>></span>
-                </li>
-                <li class="c-breadcrumbs__item">
-                    <a href="<?php echo esc_url( home_url('/')); ?>" class="c-breadcrumbs__link">ブログ記事一覧</a>
-                </li>
-            </ul>
-        </div>
+<section class="l-sub-overview p-sub-overview">
+    <div class="l-inner">
         <!-- 企業概要 -->
-        <dl class="p-company-overview__info p-explain">
+        <dl class="p-sub-overview__info p-explain">
             <div class="p-explain__block">
                 <dt class="p-explain__header">会社名</dt>
                 <dd class="p-explain__description">株式会社CodeUps</dd>

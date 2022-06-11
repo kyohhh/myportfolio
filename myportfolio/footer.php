@@ -11,14 +11,28 @@
                     </a>
                 </h1>
                 <nav class="p-footer__nav p-footer-nav">
-                    <ul class="p-footer-nav__items">
+                    <?php
+                        $defaults = array(
+                            'theme_location'  => 'footer', //functions.php「メニューの位置」の識別子
+                            'container'       => false,
+                            'container_class' => '',
+                            'menu_class'      => 'p-footer-nav__items',
+                            'depth'           => 0,
+                            'add_li_class'    => 'p-footer-nav__item', // liタグへclass追加
+                            'add_a_class'     => '' // aタグへclass追加
+                        );
+                        wp_nav_menu( $defaults );
+                    ?>
+
+
+                    <!-- <ul class="p-footer-nav__items">
                         <li class="p-footer-nav__item"><a href="#news">お知らせ</a></li>
                         <li class="p-footer-nav__item"><a href="#content">事業内容</a></li>
                         <li class="p-footer-nav__item"><a href="#works">制作実績</a></li>
                         <li class="p-footer-nav__item"><a href="#overview">企業概要</a></li>
                         <li class="p-footer-nav__item"><a href="#blog">ブログ</a></li>
                         <li class="p-footer-nav__item"><a href="#contact">お問い合わせ</a></li>
-                    </ul>
+                    </ul> -->
                 </nav>
             </div>
             <p class="p-footer__copy">&copy; 2021 Code Ups Inc.</p>

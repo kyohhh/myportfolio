@@ -3,7 +3,7 @@
     position: relative;
     text-align: center;
 
-    @include mq(pc) {
+    @include mq(tab) {
         width: inherit;
 
     }
@@ -17,7 +17,7 @@
     letter-spacing: rem(1);
 
 
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(30);
     }
 }
@@ -43,14 +43,14 @@
     // margin-bottom: rem(-23);//
     
     
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(110);
     }
 }
 
 .c-section-header__subtitle--left {
     
-    @include mq(pc) {
+    @include mq(tab) {
         // margin-top: rem(-25);
         // text-align-last: left;
         position: absolute;
@@ -60,7 +60,7 @@
 }
 
 .c-section-header__subtitle--right {
-    @include mq (pc) {
+    @include mq (tab) {
         // margin-top: rem(-25);
         position: absolute;
         right: 0;
@@ -71,7 +71,7 @@
 
 .c-section-header__subtitle--contact {
 
-    @include mq(pc) {
+    @include mq(tab) {
         // margin-top: rem(-25);
         // text-align-last: left;
         position: absolute;

@@ -1,0 +1,42 @@
+
+.p-contact-button {
+    max-width: rem(335);
+    // width: 100%;
+    // margin: rem(48) auto 0;
+
+    @include mq(tab) {
+        max-width: rem(360);
+        // margin: rem(56) auto 0;
+    }
+
+}
+
+.p-contact-button__submit {
+	-webkit-appearance: none;
+	background-color: $white;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	color: $mid-gray;
+	cursor: pointer;
+	display: inline-block;
+    width: 100%;
+	margin: 0 0 1em;
+	// padding: rem(10) rem(145);
+	text-decoration: none;
+    
+	font-size: rem(20);
+    font-weight: $font-weight-base;
+    line-height: rem(29);
+    letter-spacing: rem(2);
+}
+
+.p-contact-button__submit:hover,
+.p-contact-button__submit:focus {
+	outline: none;
+}
+
+.p-contact-button__submit::-moz-foucus-inner {
+	border: none;
+	padding: 0;
+}

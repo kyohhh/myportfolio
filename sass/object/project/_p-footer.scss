@@ -3,7 +3,7 @@
     padding: rem(42) 0;
     letter-spacing: rem(1.2);
 
-    @include mq(pc) {
+    @include mq(tab) {
         padding: rem(30) 0;
     }
 }
@@ -15,7 +15,7 @@
     width: rem(45);
     height: rem(45);
 
-    @include mq(pc) {
+    @include mq(tab) {
         bottom: rem(33);
         right: rem(31);
     }
@@ -29,7 +29,7 @@
     transition: .3s ease;
 }
 .p-footer__pagetop-link:hover {
-    @include mq(pc) {
+    @include mq(tab) {
         background: $mid-gray;
         transition: .3s ease;
     }
@@ -46,18 +46,18 @@
     top: rem(19);
     right: rem(13);
     border-radius: 1px 1px 1px 1px / 1px 1px 1px 1px;
-    @include mq(pc) {
+    @include mq(tab) {
     }
 }
 .p-footer__pagetop-link:hover:after {
-    @include mq(pc) {
+    @include mq(tab) {
         border-top: rem(2) solid $white;
         border-right: rem(2) solid $white;
     }
 }
 
 .p-footer__content {
-    @include mq(pc) {
+    @include mq(tab) {
         height: rem(39);
         display: flex;
         align-items: center;
@@ -69,7 +69,7 @@
 .p-footer__inner {
     text-align: center;
 
-    @include mq(pc) {
+    @include mq(tab) {
         display: block;
         align-items: center;
         justify-content: space-between;
@@ -82,7 +82,7 @@
 }
 
 .p-footer__logo {
-    @include mq(pc) {
+    @include mq(tab) {
         height: rem(40);
     }
 }
@@ -103,7 +103,7 @@
     letter-spacing: rem(1.2);
     margin-top: rem(27);
 
-    @include mq(pc) {
+    @include mq(tab) {
         font-size: rem(15);
         line-height: rem(35);
         margin-top: rem(64);

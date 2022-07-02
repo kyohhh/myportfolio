@@ -7,10 +7,6 @@
 }
 
 .p-recommend-article__title {
-
-}
-
-.p-recommend-article__title--sp {
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     line-height: rem(23);
@@ -19,24 +15,11 @@
     padding: rem(10) 0;
     text-align: center;
     width: 100%;
+    background: $mid-gray;
 
-    @include mq(tab){
-        display: none;
-    }
-}
-
-.p-recommend-article__title--pc {
-    display: none;
     @include mq(tab){
         display: block;
-        font-size: $font-size-base;
-        font-weight: $font-weight-base;
-        line-height: rem(23);
-        letter-spacing: rem(2);
-        border: rem(1) solid $white;
-        background: $mid-gray;
         padding: rem(8) 0;
-        text-align: center;
         max-width: rem(1100);
         width: 100%;
     }

@@ -1,6 +1,6 @@
 .p-main-visual {
     position: relative;
-    // height: 100vh;    //保留
+    height: 100vh;
     @include mq(tab) {
         height: 100%;
     }

@@ -1,5 +1,7 @@
 
 .p-news__inner {
+    justify-content: center;
+
     @include mq(tab){
         display: flex;
     }
@@ -7,7 +9,7 @@
 
 .p-news__contents {
     @include mq(tab){
-        margin: 0 auto;
+        // margin: 0 auto;
         max-width: rem(860);
         width: 100%;
     }

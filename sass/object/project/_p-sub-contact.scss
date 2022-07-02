@@ -15,25 +15,42 @@
 .p-sub-contact__contents {
 
     @include mq(tab) {
-        // text-align: right;
-        // text-align: center;
+        max-width: rem(540);
+        width: 100%;
+        margin: 0 auto;
     }
 }
 
 .p-sub-contact__content {
+    width: 100%;
+    // align-items: center;
     
     @include mq(tab) {
-        display: flex;
-        text-align: center;
+        // display: flex;
+        // margin: 0 auto;
+        
     }
 }
 .p-sub-contact__content:nth-child(n + 2) {
     margin-top: rem(32);
+    
+    @include mq(tab) {
+        margin-top: rem(45);
+        // max-width: rem(160);
+        // width: 100%;
+    }
 }
 
 .p-sub-contact__header {
     display: flex;
     align-items: center;
+    // vertical-align: middle;
+    // height: inherit;
+
+    @include mq(tab) {
+        max-width: rem(160);
+        width: 100%;
+    }
 }
 
 .p-sub-contact__title {
@@ -41,7 +58,8 @@
     font-weight: $font-weight-base;
     line-height: 1;
     letter-spacing: rem(0.7);
-    
+    // height: inherit;
+
 }
 
 .p-sub-contact__required {
@@ -51,20 +69,43 @@
     line-height: 1;
     padding: rem(3) rem(5);
     background: $red;
+    display: block;
+    // height: inherit;
 }
 
 .p-sub-contact__item {
     margin-top: rem(16);
+    // align-items: center;
 
     @include mq(tab) {
-        max-width: rem(540);
+        // max-width: rem(540);
         width: 100%;
-        margin-left: rem(24);
+        // margin-left: rem(24);
+        // margin-top: 0;
     }
 }
 
 .p-sub-contact__content--button {
     margin: 0 auto;
+    
+}
+
+.p-contact-button__submit {
+    background: #333;
+    border: 1px solid #fff;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25rem;
+    letter-spacing: 0.125rem;
+    padding: 0.5625rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.p-contact-button__submit {
+   
+    
+
 }
 
 // .p-sub-contact__btn {

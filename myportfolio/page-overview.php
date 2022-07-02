@@ -36,43 +36,24 @@
     </div>
 </div>
 
-<!--  -->
+<!-- 企業概要 -->
 <section class="l-sub-overview p-sub-overview">
     <div class="l-inner">
         <!-- 企業概要 -->
         <dl class="p-sub-overview__info p-explain">
+
+            <!-- 繰り返しフィールド -->
+            <?php $overviews = SCF::get('overview');
+            foreach ($overviews as $overview ) { ?>
+
             <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
+                <dt class="p-explain__header"><?php echo $overview['overview_title']; ?></dt>
+                <dd class="p-explain__description"><?php echo $overview['overview_text']; ?></dd>
             </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
-            <div class="p-explain__block">
-                <dt class="p-explain__header">会社名</dt>
-                <dd class="p-explain__description">株式会社CodeUps</dd>
-            </div>
+
+            <?php } ?>
+            <!-- 繰り返しフィールド -->
+
         </dl>
         <!-- google map -->
         <div class="l-map p-map">

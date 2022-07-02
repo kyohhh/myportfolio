@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <!-- お知らせ一覧 -->
+
 <!-- sv -->
 <div class="p-sub-visual js-sub-mv">
     <div class="p-sub-visual__inner">
@@ -13,7 +14,7 @@
             </picture>
         </div>
         <div class="p-sub-visual__text">
-            <p class="p-sub-visual__title"><?php the_title(); ?></p>
+            <p class="p-sub-visual__title">お知らせ</p>
         </div>
     </div>
 </div>
@@ -49,7 +50,7 @@
             <div class="p-news__content">
                 <div class="p-news__info">
                     <time class="p-news__date" datetime="<?php the_time(' c '); ?>"><?php the_time('Y.m.d'); ?></time>
-                    <span class="p-news__category">お知らせ</span>
+                    <span class="p-news__category"><?php echo get_the_category()[0]->cat_name; ?></span>
                 </div>
                 <div class="p-news__body">
                     <a href="<?php the_permalink();?>" class="p-news__link"><?php the_title(); ?></a>

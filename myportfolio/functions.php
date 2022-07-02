@@ -35,9 +35,11 @@ add_action( 'after_setup_theme', 'my_setup' );
 function my_script_init()
 {
 
-	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), '1.0.1', 'all');
+	wp_enqueue_style('my', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all');
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '1.0.0', true );
+	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);
 
-	wp_enqueue_script( 'my', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0.1', true );
 
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
@@ -66,7 +68,7 @@ add_action('wp_enqueue_scripts', 'my_script_init');
  * 参考：https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/register_nav_menus
  */
 
-//functions.php
+//メニューの登録
 function register_my_menus() {
 	register_nav_menus( array( //複数のナビゲーションメニューを登録する関数
 	//'「メニューの位置」の識別子' => 'メニューの説明の文字列',
@@ -213,3 +215,12 @@ add_action( 'pre_get_posts', 'change_set_blog' );
 // 	}
 // }
 // add_action( 'pre_get_posts', 'change_set_blog' );
+
+// ==============
+// コンタクトフォーム
+// ==============
+// ContactForm7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+	return false;
+}

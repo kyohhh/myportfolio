@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<!-- ブログ一覧 -->
+<!-- カテゴリ別ブログ一覧 -->
 
 <!-- sv -->
 <div class="p-sub-visual js-sub-mv">
@@ -13,7 +13,7 @@
             </picture>
         </div>
         <div class="p-sub-visual__text">
-            <p class="p-sub-visual__title"><?php post_type_archive_title(); ?></p>
+            <p class="p-sub-visual__title">ブログ</p>
         </div>
     </div>
 </div>
@@ -48,20 +48,30 @@
             <ul class="c-category__list">
                 <li class="c-category__item">
                     <a href="<?php echo esc_url(get_post_type_archive_link('blog')); ?>"
-                        class="c-category__item-link--white">ALL</a>
+                        class="c-category__item-link">ALL</a>
                 </li>
+
+                <!--  -->
+                <?php
+                $cat = get_queried_object();
+                $cat_name = $cat->name;
+                ?>
 
                 <?php
                 $blog_terms = get_terms('blog_category', array('hide_empty' => false));
                 foreach ($blog_terms as $blog_term) :
                 ?>
-
                 <li class="c-category__item">
-                    <a href="<?php echo esc_url(get_term_link($blog_term, 'blog_category')); ?>"
-                        class="c-category__item-link"><?php echo esc_html($blog_term->name); ?></a>
+                    <a href="<?php echo esc_url(get_term_link($blog_term, 'blog_category')); ?>" class="<?php
+                    if ($cat_name == esc_html($blog_term->name)) {
+                        echo "c-category__item-link--white";
+                    } ?>"><?php echo esc_html($blog_term->name); ?></a>
                 </li>
+                <?php endforeach; ?>
 
-                <?php endforeach;?>
+
+
+
 
             </ul>
         </div>
@@ -71,6 +81,7 @@
             <?php if (have_posts()): ?>
             <?php while (have_posts()) : the_post(); ?>
             <a href="<?php the_permalink() ?>" class="p-cards__item p-card">
+                <span class="p-card__new-icon">new</span>
                 <figure class="p-card__img">
                     <?php if (has_post_thumbnail()) { ?>
                     <?php the_post_thumbnail( 'blog' ); ?>

@@ -38,6 +38,7 @@
     display: block;
     height: 100%;
     padding: rem(7) rem(8);
+    text-transform: uppercase;
 
     @include mq (tab) {
         padding: rem(3) rem(8);

@@ -1,0 +1,53 @@
+
+.p-detail-works {
+
+}
+
+.p-detail-works__inner {
+
+}
+
+.p-detail-works__block {
+
+}
+
+.p-detail-works__block:nth-child(1) {
+    margin-top: rem(60);
+
+    @include mq(tab){
+        margin-top: rem(80);
+    }
+}
+
+.p-detail-works__block:nth-child(n + 2) {
+    margin-top: rem(32);
+
+    @include mq(tab){
+        margin-top: rem(48);
+    }
+}
+
+.p-detail-works__title {
+    background: $black;
+    border: 1px solid $white;
+    border-radius: rem(32);
+    padding: rem(8) rem(24);
+    margin-left: rem(24);
+    display: inline-block; //spanタグ
+
+    font-size: rem(20);
+    font-weight: $font-weight-base;
+    line-height: rem(29);
+    letter-spacing: rem(.4);
+}
+
+.p-detail-works__description {
+    padding: rem(56) rem(10) rem(33);
+    border: 1px solid $white;
+    margin-top: rem(-23.5);
+
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: rem(35);
+    letter-spacing: rem(.4);
+}

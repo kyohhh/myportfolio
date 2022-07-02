@@ -1,40 +1,42 @@
 // ローディング判定
 jQuery(function ($) {
-	jQuery(window).on("load", function() {
-		jQuery("body").attr("data-loading", "true");
+	// この中であればWordpressでも「$」が使用可能になる
+
+	// jQuery(window).on("load", function() {
+	// 	jQuery("body").attr("data-loading", "true");
+	// });
+
+
+	// スクロール判定
+	$(window).on("scroll", function() {
+		if (100 < jQuery(this).scrollTop()) {
+			jQuery("body").attr("data-scroll", "true");
+		} else {
+			jQuery("body").attr("data-scroll", "false");
+		}
 	});
 
-	jQuery(function($) {
-		// スクロール判定
-		jQuery(window).on("scroll", function() {
-			if (100 < jQuery(this).scrollTop()) {
-				jQuery("body").attr("data-scroll", "true");
-			} else {
-				jQuery("body").attr("data-scroll", "false");
-			}
-		});
+	// ================
+	// spメニュー
+	// ================
+	// ハンバーガー
+	$(".js-hamburger").click(function() {
+		$(this).toggleClass("open");
+		$(".js-drawer-menu").toggleClass("open");
 
-		// ================
-		// spメニュー
-		// ================
-		/* ハンバーガー */
-		$(".js-hamburger").on("click", function() {
-			$(this).toggleClass("open");
-			$(".js-drawer-menu").toggleClass("open");
+		return false;
+	});
 
-			return false;
-		});
-
-		/* ドロワー */
-		$(".js-drawer-menu a[href]").on("click", function() {
-			$('.js-hamburger').trigger('click');
-		});
+	// ドロワー
+	$(".js-drawer-menu a[href]").click(function() {
+		$('.js-hamburger').trigger('click');
+	});
 
 		// ================
 		// swiper
 		// ================
-		//main-visual
-		//js-mv-swiper
+		// トップページ
+		//メインビジュアル
 		let mySwiper1 = new Swiper ('.js-mv-swiper', {
 			loop: true,
 			effect: 'fade',
@@ -45,8 +47,7 @@ jQuery(function ($) {
 			speed: 2000
 		});
 
-		//works
-		// js-works-swiper
+		//worksセクション
 		let mySwiper2 = new Swiper ('.js-works-swiper', {
 			loop: true,
 			effect: 'slide',
@@ -60,6 +61,36 @@ jQuery(function ($) {
 			type: 'bullets', //ページネーションの種類
 			clickable: true, //クリックに反応させる
 			}
+		});
+
+
+		// 制作実績詳細
+		let mySwiper3 = new Swiper ('.js-detail-swiper', {
+			loop: true,
+			effect: 'slide',
+			autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.js-works-pagination',
+				type: 'bullets', //ページネーションの種類
+				clickable: true, //クリックに反応させる
+				},
+			speed: 2000,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			slidesPerView: 1,
+			spaceBetween: 0,
+			initialSlide: 2,
+			breakpoints: {
+				// スライドの表示枚数：500px以上の場合
+				768: {
+				  slidesPerView: 3,
+				}
+			  }
 		});
 
 		// ================
@@ -134,5 +165,4 @@ jQuery(function ($) {
 					e.preventDefault();
 				});
 		}
-	});
 });

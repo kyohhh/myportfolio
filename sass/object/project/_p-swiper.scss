@@ -1,5 +1,7 @@
-
-//js-mv-swiper
+// ==========
+// トップページ
+// ==========
+//メインビュー
 @keyframes zoomUp {
     0% {
         transform: scale(1);
@@ -19,8 +21,8 @@
 }
 
 
-// js-works-swiper
-.swiper-container {
+// worksセクション
+.swiper-container--works {
     position: relative;
 
     @include mq(tab) {
@@ -30,18 +32,13 @@
     }
 }
 
-.swiper.js-works-swiper {
+.swiper--works {
     width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-.swiper-slide-active.js-works-slide,
-.swiper-slide-duplicate-active.js-works-slide,
-.swiper-slide-prev.js-works-slide{
-}
-
-.swiper-slide.js-works-slide img {
+.swiper-slide--works img {
     height: auto;
     width: 100%;
 
@@ -50,7 +47,7 @@
     }
 }
 
-.swiper-pagination.js-works-pagination {
+.swiper-pagination--works {
         bottom: rem(-22) !important;
 
     @include mq (tab){
@@ -68,4 +65,42 @@
 .swiper-pagination-bullet-active {
     background: var(--swiper-pagination-bullet-inactive-color, $light-yellow) !important;
     opacity: var(--swiper-pagination-bullet-inactive-opacity, 1) !important;
+}
+
+
+// ==========
+// 制作実績詳細
+// ==========
+.swiper-container--detail {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
+    @include mq(tab) {
+        display: block;
+    }
+}
+
+.swiper--detail {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+.swiper-slide--detail img {
+    height: auto;
+    width: 100%;
+
+    @include mq (tab)  {
+        max-width: rem(557) !important;
+    }
+}
+
+.swiper-pagination--detail {
+    bottom: rem(-22) !important;
+
+@include mq (tab){
+    bottom: rem(-40) !important;
+}
 }

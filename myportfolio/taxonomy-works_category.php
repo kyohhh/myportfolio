@@ -1,19 +1,19 @@
 <?php get_header(); ?>
-<!-- ブログ一覧 -->
+<!-- カテゴリ別制作実績一覧 -->
 
 <!-- sv -->
 <div class="p-sub-visual js-sub-mv">
     <div class="p-sub-visual__inner">
         <div class="p-sub-visual__content">
             <picture class="p-sub-visual__img">
-                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/blog/img-blog.jpg"
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/works/img-works.jpg"
                     media="(min-width: 768px)"><!-- ○○px以上で表示する画像 -->
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/img-blog-sp.jpg" alt="サブビジュアル">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works/img-works-sp.jpg" alt="サブビジュアル">
                 <!-- それ以外の場合に表示する画像 -->
             </picture>
         </div>
         <div class="p-sub-visual__text">
-            <p class="p-sub-visual__title"><?php post_type_archive_title(); ?></p>
+            <p class="p-sub-visual__title">制作実績</p>
         </div>
     </div>
 </div>
@@ -41,58 +41,61 @@
 </div>
 
 
-<section class="l-sub-blog p-sub-blog">
-    <div class="p-sub-blog__inner l-inner">
+<!--  -->
+<section class="l-sub-works p-sub-works">
+    <div class="p-sub-works__inner l-inner">
         <!-- カテゴリ一覧 -->
-        <div class="p-sub-blog__category c-category">
+        <div class="p-sub-works__category c-category">
             <ul class="c-category__list">
                 <li class="c-category__item">
-                    <a href="<?php echo esc_url(get_post_type_archive_link('blog')); ?>"
-                        class="c-category__item-link--white">ALL</a>
+                    <a href="<?php echo esc_url(get_post_type_archive_link('works')); ?>"
+                        class=" c-category__item-link">all</a>
                 </li>
 
+
+                <!--  -->
                 <?php
-                $blog_terms = get_terms('blog_category', array('hide_empty' => false));
-                foreach ($blog_terms as $blog_term) :
+                $cat = get_queried_object();
+                $cat_name = $cat->name;
+                ?>
+
+
+                <?php
+                $works_terms = get_terms('works_category', array('hide_empty' => false));
+                foreach ($works_terms as $works_term) :
                 ?>
 
                 <li class="c-category__item">
-                    <a href="<?php echo esc_url(get_term_link($blog_term, 'blog_category')); ?>"
-                        class="c-category__item-link"><?php echo esc_html($blog_term->name); ?></a>
+                    <a href="<?php echo esc_url(get_term_link($works_term, 'works_category')); ?>" class="<?php
+                    if ($cat_name == esc_html($works_term->name)) {
+                        echo "c-category__item-link--white";
+                    } ?>"><?php echo esc_html($works_term->name); ?></a>
                 </li>
-
-                <?php endforeach;?>
-
+                <?php endforeach; ?>
             </ul>
         </div>
-
-        <!-- ブログ一覧 -->
-        <div class="p-sub-blog__items p-cards">
+        <!-- 制作実績一覧 -->
+        <div class="p-sub-works__items p-results">
             <?php if (have_posts()): ?>
             <?php while (have_posts()) : the_post(); ?>
-            <a href="<?php the_permalink() ?>" class="p-cards__item p-card">
-                <figure class="p-card__img">
+            <a href="<?php the_permalink() ?>" class="p-results__item p-result">
+                <figure class="p-result__img">
                     <?php if (has_post_thumbnail()) { ?>
-                    <?php the_post_thumbnail( 'blog' ); ?>
+                    <?php the_post_thumbnail( 'works' ); ?>
                     <?php } else { ?>
                     <img src="<?php echo esc_url(get_theme_file_uri( '/img/common/noimage.jpg')); ?>">
                     <?php } ?>
                 </figure>
-                <div class="p-card__content">
-                    <div class="p-card__body">
-                        <h3 class="p-card__title"><?php the_title(); ?></h3>
-                        <p class="p-card__text"><?php the_excerpt(); ?></p>
-                    </div>
-                    <div class="p-card__info">
-                        <span
-                            class="p-card__category"><?php echo esc_html(get_the_terms(get_the_ID(), 'blog_category')[0]->name); ?></span>
-                        <time class="p-card__date"><?php echo get_the_date('Y.m.d') ?></time>
-                    </div>
+                <span
+                    class="p-result__category"><?php echo esc_html(get_the_terms(get_the_ID(), 'works_category')[0]->name); ?></span>
+                <div class="p-result__content">
+                    <h3 class="p-result__title"><?php the_title(); ?></h3>
                 </div>
             </a>
             <?php endwhile; ?>
             <?php else: ?>
             <!-- 投稿が無い場合の処理 -->
+            投稿がありません
             <?php endif; ?>
         </div>
     </div>

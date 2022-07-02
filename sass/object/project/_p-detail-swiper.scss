@@ -1,0 +1,50 @@
+.p-detail-swiper {
+
+    @include mq(tab) {
+    }
+}
+
+
+.p-detail-swiper__block {
+}
+
+.p-detail-swiper__content {
+    @include mq(tab) {
+    }
+}p-
+
+.p-detail-swiper__imgs {
+    @include mq(tab) {
+        max-width: rem(557);
+        width: 100%;
+    }
+}
+
+.p-detail-swiper__img {
+    position: relative;
+
+    @include mq(tab) {
+        max-width: rem(557);
+        width: 100%;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.p-detail-swiper__img::before {
+    content: "";
+    display: block;
+    padding-top: 69.6%;
+
+    @include mq(tab) {
+        padding-top: 69.83842%;
+    }
+}

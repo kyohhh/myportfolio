@@ -12,31 +12,7 @@ $blog = esc_url( home_url( '/blog/' ) );
 $contact = esc_url( home_url( '/contact/' ) );
 ?>
 
-<!-- ドロワーメニュー -->
-<!-- sp-nav -->
-<nav id="DrawerMenu" class="p-sp-nav js-drawer-menu">
-    <?php
-        // $defaults = array(
-        //     'theme_location'  => 'main', //functions.php「メニューの位置」の識別子
-            // 'container'       => false,
-        //     'container_class' => 'aa',
-        //     'menu_class'      => 'p-sp-nav__items',
-        //     'depth'           => 0,
-        //     'add_li_class'    => 'p-sp-nav__item', // liタグへclass追加
-        //     'add_a_class'     => '' // aタグへclass追加
-        // );
-        // wp_nav_menu( $defaults );
-    ?>
-    <ul class="p-sp-nav__items">
-        <li class="p-sp-nav__item"><a href="#news">お知らせ</a></li>
-        <li class="p-sp-nav__item"><a href="#content">事業内容</a></li>
-        <li class="p-sp-nav__item"><a href="#works">制作実績</a></li>
-        <li class="p-sp-nav__item"><a href="#overview">企業概要</a></li>
-        <li class="p-sp-nav__item"><a href="#blog">ブログ</a></li>
-        <li class="p-sp-nav__item"><a href="#contact">お問い合わせ</a></li>
-    </ul>
-</nav>
-
+<!-- メインビュー -->
 <!-- mv swiper -->
 <div class="p-main-visual swiper js-mv-swiper js-mv">
     <div class="swiper-wrapper">
@@ -96,10 +72,15 @@ $contact = esc_url( home_url( '/contact/' ) );
 
 
             <div class="p-news__content">
+                <?php
+                // カテゴリー１つ目の名前を表示
+                $category = get_the_category();
+                if ($category[0]) : ?>
                 <div class="p-news__info">
                     <time class="p-news__date" datetime="<?php the_time(' c '); ?>"><?php the_time('Y.m.d'); ?></time>
-                    <span class="p-news__category">お知らせ</span>
+                    <span class="p-news__category"><?php echo $category[0]->cat_name; ?></span>
                 </div>
+                <?php endif; ?>
                 <div class="p-news__body">
                     <a href="<?php the_permalink();?>" class="p-news__link"><?php the_title(); ?></a>
                 </div>
@@ -125,25 +106,25 @@ $contact = esc_url( home_url( '/contact/' ) );
         <span class="c-section-header__subtitle c-section-header__subtitle--left">content</span>
     </div>
     <div class="p-content__items">
-        <a href="#" class="p-content__item">
+        <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content01.jpg" alt="経営理念ページへ">
                 <p class="p-content__imgtitle">経営理念ページへ</p>
             </figure>
         </a>
-        <a href="#" class="p-content__item">
+        <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content02.jpg" alt="理念1へ">
                 <p class="p-content__imgtitle">理念1へ</p>
             </figure>
         </a>
-        <a href="#" class="p-content__item">
+        <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content03.jpg" alt="理念2へ">
                 <p class="p-content__imgtitle">理念2へ</p>
             </figure>
         </a>
-        <a href="#" class="p-content__item">
+        <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content04.jpg" alt="理念3へ">
                 <p class="p-content__imgtitle">理念3へ</p>
@@ -160,25 +141,26 @@ $contact = esc_url( home_url( '/contact/' ) );
             <span class="c-section-header__subtitle c-section-header__subtitle--right">works</span>
         </div>
         <div class="p-works__item">
-            <div class="p-works__block swiper-container">
-                <div class="p-works__content swiper js-works-swiper">
+            <!--  -->
+            <div class="p-works__block swiper-container swiper-container--works">
+                <div class="p-works__content swiper swiper--works js-works-swiper">
                     <div class="p-works__imgs swiper-wrapper">
-                        <div class="p-works__img swiper-slide js-works-slide">
+                        <div class="p-works__img swiper-slide swiper-slide--works js-works-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/works01.jpg"
                                 alt="企業実績1">
                         </div>
-                        <div class="p-works__img swiper-slide js-works-slide">
+                        <div class="p-works__img swiper-slide swiper-slide--works js-works-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/works02.jpg"
                                 alt="企業実績2">
                         </div>
-                        <div class="p-works__img swiper-slide js-works-slide">
+                        <div class="p-works__img swiper-slide swiper-slide--works js-works-slide">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/works03.jpg"
                                 alt="企業実績3">
                         </div>
                     </div>
                 </div>
                 <!-- Add Pagination -->
-                <div class="swiper-pagination js-works-pagination"></div>
+                <div class="swiper-pagination swiper-pagination--works js-works-pagination"></div>
             </div>
             <div class="p-works__body">
                 <h3 class="p-works__title">メインタイトルが入ります。</h3>

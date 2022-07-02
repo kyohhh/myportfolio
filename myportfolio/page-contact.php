@@ -36,61 +36,14 @@
     </div>
 </div>
 
-
 <section class="l-sub-contact p-sub-contact">
-    <div class="l-inner">
+    <div class="p-sub-contact__inner l-inner">
         <!-- コンタクトフォーム -->
-        <div class="p-sub-contact__contents">
-            <div class="p-sub-contact__content">
-                <div class="p-sub-contact__header">
-                    <p class="p-sub-contact__title">会社名・団体名</p>
-                    <span class="p-sub-contact__required">必須</span>
-                </div>
-                <div class="p-sub-contact__item p-contact-text">
-                    <input class="p-contact-text__text" type="text">
-                </div>
-            </div>
-            <div class="p-sub-contact__content">
-                <div class="p-sub-contact__header">
-                    <p class="p-sub-contact__title">部署名</p>
-                    <span class="p-sub-contact__required">必須</span>
-                </div>
-                <div class="p-sub-contact__item p-contact-text">
-                    <input class="p-contact-text__text" type="text">
-                </div>
-            </div>
-            <div class="p-sub-contact__content">
-                <div class="p-sub-contact__header">
-                    <p class="p-sub-contact__title">お名前</p>
-                    <span class="p-sub-contact__required">必須</span>
-                </div>
-                <div class="p-sub-contact__item p-contact-text">
-                    <input class="p-contact-text__text" type="text">
-                </div>
-            </div>
-            <div class="p-sub-contact__content">
-                <div class="p-sub-contact__header">
-                    <p class="p-sub-contact__title">ふりがな</p>
-                    <span class="p-sub-contact__required">必須</span>
-                </div>
-                <div class="p-sub-contact__item p-contact-text">
-                    <input class="p-contact-text__text" type="text">
-                </div>
-            </div>
-            <div class="p-sub-contact__content">
-                <div class="p-sub-contact__header">
-                    <p class="p-sub-contact__title">お問い合わせ内容</p>
-                    <span class="p-sub-contact__required">必須</span>
-                </div>
-                <div class="p-sub-contact__item p-contact-textarea">
-                    <textarea class="p-contact-textarea__text"></textarea>
-                </div>
-            </div>
-            <!-- 送信ボタン -->
-            <div class="p-sub-contact__content p-sub-contact__content--button p-contact-button">
-                <input class="p-contact-button__submit" type="submit" value="送信">
-            </div>
-        </div>
+        <?php if (have_posts()): ?>
+        <?php while (have_posts()) : the_post(); ?>
+        <?php the_content(); ?>
+        <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 </section>
 

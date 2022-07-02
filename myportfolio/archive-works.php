@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-
 <!-- 制作実績一覧 -->
+
 <!-- sv -->
 <div class="p-sub-visual js-sub-mv">
     <div class="p-sub-visual__inner">
@@ -13,7 +13,7 @@
             </picture>
         </div>
         <div class="p-sub-visual__text">
-            <p class="p-sub-visual__title"><?php the_title(); ?></p>
+            <p class="p-sub-visual__title"><?php post_type_archive_title(); ?></p>
         </div>
     </div>
 </div>
@@ -48,17 +48,18 @@
         <div class="p-sub-works__category c-category">
             <ul class="c-category__list">
                 <li class="c-category__item">
-                    <a href="#" class="c-category__item-link--white">ALL</a>
+                    <a href="<?php echo esc_url(get_post_type_archive_link('works')); ?>"
+                        class=" c-category__item-link c-category__item-link--white">all</a>
                 </li>
+                <?php
+                $works_terms = get_terms('works_category', array('hide_empty' => false));
+                foreach ($works_terms as $works_term) :
+                ?>
                 <li class="c-category__item">
-                    <a href="#" class="c-category__item-link">カテゴリ１</a>
+                    <a href="<?php echo esc_url(get_term_link($works_term, 'works_category')); ?>"
+                        class="c-category__item-link"><?php echo esc_html($works_term->name); ?></a>
                 </li>
-                <li class="c-category__item">
-                    <a href="#" class="c-category__item-link">カテゴリカテゴリ</a>
-                </li>
-                <li class="c-category__item">
-                    <a href="#" class="c-category__item-link">カテ</a>
-                </li>
+                <?php endforeach; ?>
             </ul>
         </div>
         <!-- 制作実績一覧 -->
@@ -73,6 +74,8 @@
                     <img src="<?php echo esc_url(get_theme_file_uri( '/img/common/noimage.jpg')); ?>">
                     <?php } ?>
                 </figure>
+                <span
+                    class="p-result__category"><?php echo esc_html(get_the_terms(get_the_ID(), 'works_category')[0]->name); ?></span>
                 <div class="p-result__content">
                     <h3 class="p-result__title"><?php the_title(); ?></h3>
                 </div>
@@ -80,6 +83,7 @@
             <?php endwhile; ?>
             <?php else: ?>
             <!-- 投稿が無い場合の処理 -->
+            投稿がありません
             <?php endif; ?>
         </div>
     </div>

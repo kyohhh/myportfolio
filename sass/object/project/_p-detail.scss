@@ -20,11 +20,22 @@
 
 }
 
+.p-detail__info {
+    display: flex;
+}
+
 .p-detail__info,
 .p-detail__body {
-    display: flex;
     margin-top: rem(16);
     align-items: center;
+
+    @include mq(tab){
+        margin-top: rem(32);
+    }
+}
+
+.p-detail__swiper{
+    margin-top: rem(16);
 
     @include mq(tab){
         margin-top: rem(32);

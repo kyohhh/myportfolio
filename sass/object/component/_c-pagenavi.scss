@@ -1,9 +1,5 @@
 
 
 .c-pagenavi {
-    display: none;
-
-	@include mq(tab) {
         display: block;
-	}
 }

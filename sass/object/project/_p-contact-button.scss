@@ -24,6 +24,7 @@
 	margin: 0 0 1em;
 	// padding: rem(10) rem(145);
 	text-decoration: none;
+	transition: .3s ease;
     
 	font-size: rem(20);
     font-weight: $font-weight-base;
@@ -33,6 +34,10 @@
 
 .p-contact-button__submit:hover,
 .p-contact-button__submit:focus {
+	border: 1px solid $white;
+	background-color: $white;
+	color: $mid-gray;
+	transition: .3s ease;
 	outline: none;
 }
 

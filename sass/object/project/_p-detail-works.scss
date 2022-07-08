@@ -42,7 +42,7 @@
 }
 
 .p-detail-works__description {
-    padding: rem(56) rem(10) rem(33);
+    padding: rem(30) rem(10) rem(30);
     border: 1px solid $white;
     margin-top: rem(-23.5);
 
@@ -50,4 +50,8 @@
     font-weight: $font-weight-base;
     line-height: rem(35);
     letter-spacing: rem(.4);
+
+    @include mq(tab){
+        padding: rem(56) rem(10) rem(33);
+    }
 }

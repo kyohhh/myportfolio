@@ -68,20 +68,41 @@
         <div class="p-detail__body p-detail-works">
 
             <!-- 繰り返しフィールド -->
-            <?php if(get_post_meta($post->ID, 'works', true)): ?>
-            <?php $works = SCF::get('works');
-            foreach ($works as $detail) { ?>
+            <?php
+            //引数定義          グループ名（配列になる）
+            $info = SCF::get('works');
+            //引数定義
+            foreach ($info as $detail) { ?>
 
             <div class="p-detail-works__block">
-                <span class="p-detail-works__title"><?php echo $detail['works-title']; ?></span>
-                <p class="p-detail-works__description"><?php echo $detail['works-text']; ?></p>
+                <h3 class="p-detail-works__title"><?php echo $detail['works-title']; // 名前を入力
+                                    ?></h3>
+                <p class="p-detail-works__description"><?php echo $detail['works-text']; // 名前を入力
+                                  ?></p>
             </div>
-
             <?php } ?>
-            <?php endif; ?>
-            <!-- / 繰り返しフィールド -->
-
         </div>
+        <!-- 繰り返しフィールド -->
+
+
+
+        <!-- 繰り返しフィールド -->
+        <?php if(get_post_meta($post->ID, 'works', true)): ?>
+
+
+        <?php $works = SCF::get('works');
+            foreach ($works as $detail) { ?>
+
+        <div class="p-detail-works__block">
+            <span class="p-detail-works__title"><?php echo $detail['works-title']; ?></span>
+            <p class="p-detail-works__description"><?php echo $detail['works-text']; ?></p>
+        </div>
+
+        <?php } ?>
+        <?php endif; ?>
+        <!-- / 繰り返しフィールド -->
+
+    </div>
     </div>
 </section>
 

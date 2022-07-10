@@ -1154,6 +1154,10 @@ summary {
 	padding-top: 69.6%;
 }
 
+.p-detail-works__img {
+	margin-top: 2.5rem;
+}
+
 .p-detail-works__block:nth-child(1) {
 	margin-top: 3.75rem;
 }
@@ -2555,6 +2559,10 @@ p-
 
 .p-detail-swiper__img::before {
 	padding-top: 69.83842%;
+}
+
+.p-detail-works__img {
+	margin-top: 5rem;
 }
 
 .p-detail-works__block:nth-child(1) {

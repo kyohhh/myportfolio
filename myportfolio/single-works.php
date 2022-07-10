@@ -33,7 +33,7 @@
         </div>
 
         <!-- swiper -->
-        <div class="p-detail__swiper p-detail-swiper">
+        <!-- <div class="p-detail__swiper p-detail-swiper">
             <div class="p-detail-swiper__block swiper-container swiper-container--detail">
                 <div class="p-detail-swiper__content swiper swiper--detail js-detail-swiper">
                     <div class="p-detail-swiper__imgs swiper-wrapper">
@@ -50,22 +50,40 @@
                                 alt="企業実績3">
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Add Pagination -->
-                <div class="swiper-pagination swiper-pagination--detail js-works-pagination"></div>
-
-                <!--  -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            </div>
-        </div>
+        <!-- Add Pagination -->
+        <!-- <div class="swiper-pagination swiper-pagination--detail js-works-pagination"></div> -->
 
 
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
 
 
         <div class="p-detail__body p-detail-works">
+
+            <!-- 繰り返しフィールド -->
+            <?php
+                $info = SCF::get('works-imgs');
+                foreach ($info as $detail) {
+                    $imgurl = wp_get_attachment_image_src($detail['works-img'] , 'full');
+            ?>
+            <!-- <div> -->
+            <!-- 画像がない時はnoImg画像を表示 -->
+            <?php if($detail['works-imgs'] === "" ) {?>
+            <div class="p-detail-works__img">
+                <img src="<?php echo get_template_directory_uri(); ?>assets/img/common/noimg.jpeg">
+            </div>
+            <!-- それ以外（画像がある時）画像を表示 -->
+            <?php } else { ?>
+            <div class="p-detail-works__img">
+                <img src="<?php echo $imgurl[0]; ?>">
+            </div>
+            <?php } ?>
+            <!-- </div> -->
+            <?php } ?>
+            <!-- /繰り返しフィールド -->
+
 
             <!-- 繰り返しフィールド -->
             <?php
@@ -76,34 +94,18 @@
 
             <div class="p-detail-works__block">
                 <h3 class="p-detail-works__title"><?php echo $detail['works-title']; // 名前を入力
-                                    ?></h3>
+                    ?></h3>
                 <p class="p-detail-works__description"><?php echo $detail['works-text']; // 名前を入力
-                                  ?></p>
+                ?></p>
             </div>
             <?php } ?>
+            <!-- /繰り返しフィールド -->
+
         </div>
-        <!-- 繰り返しフィールド -->
-
-
-
-        <!-- 繰り返しフィールド -->
-        <?php if(get_post_meta($post->ID, 'works', true)): ?>
-
-
-        <?php $works = SCF::get('works');
-            foreach ($works as $detail) { ?>
-
-        <div class="p-detail-works__block">
-            <span class="p-detail-works__title"><?php echo $detail['works-title']; ?></span>
-            <p class="p-detail-works__description"><?php echo $detail['works-text']; ?></p>
-        </div>
-
-        <?php } ?>
-        <?php endif; ?>
-        <!-- / 繰り返しフィールド -->
-
     </div>
-    </div>
+    <!-- </div> -->
+    <!-- </div>
+    </div> -->
 </section>
 
 <!-- ページネーション 前後送り -->

@@ -7,6 +7,14 @@
 
 }
 
+.p-detail-works__img {
+    margin-top: rem(40);
+
+    @include mq(tab){
+        margin-top: rem(80);
+    }
+}
+
 .p-detail-works__block {
 
 }

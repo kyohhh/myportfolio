@@ -86,7 +86,8 @@
                     <div class="p-card__info">
                         <span
                             class="p-card__category"><?php echo esc_html(get_the_terms(get_the_ID(), 'blog_category')[0]->name); ?></span>
-                        <time class="p-card__date"><?php echo get_the_date('Y.m.d') ?></time>
+                        <time class="p-card__date"
+                            datetime="<?php the_time('c');?>"><?php echo get_the_date('Y.m.d') ?></time>
                     </div>
                 </div>
             </a>
@@ -99,7 +100,7 @@
 </section>
 
 <!-- ページネーション -->
-<div class="l-pagenavi c-pagenavi">
+<div class=" l-pagenavi c-pagenavi">
     <?php wp_pagenavi(); ?>
 </div>
 

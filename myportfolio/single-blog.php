@@ -131,10 +131,10 @@
             <span class="c-section-header__subtitle c-section-header__subtitle--contact">contact</span>
         </div>
         <div class="p-contact__body">
-            <div class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+            <div class="p-contact__text">お気軽にお問合せください。次の100年を一緒に歩んでくださる皆さまをお待ちしております。</div>
         </div>
         <div class="p-contact__btn">
-            <a href="#" class="c-btn">お問い合わせへ</a>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">お問い合わせへ</a>
         </div>
     </div>
 </section>

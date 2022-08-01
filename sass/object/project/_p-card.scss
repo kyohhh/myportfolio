@@ -4,9 +4,13 @@
     position: relative;
     background: $white;
     color: $gray;
+    // box-shadow: 0px 3px 30px $black;
+    box-shadow: 0px 3px 30px rgba(0,0,0,0.3);
     transition: .3s ease;
+    width: 100%;
     
     @include mq(tab) {
+        // max-width: calc(33% - rem(25) * 2 / 3);
     }
 }
 
@@ -33,30 +37,67 @@
     }
 }
 
-.p-card__new-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: rem(60);
-    height: rem(60);
-    position: absolute;
-    top: rem(-16);
-    left: rem(-16);
-    background: $orange;
-    border-radius: 50%;/*角丸*/
-    z-index: 10;
-    line-height: 60px;
-    color: $mid-gray;
-    font-size: rem(16);
-    font-weight: $font-weight-base;
-    letter-spacing: rem(2);
-    text-transform: capitalize;
 
-    @include mq(tab) {
-        top: rem(-20);
-        left: rem(-14);
-    }
-}
+// .card {
+//     display: inline-block;
+//     position: relative;
+//     background: $white;
+//     color: $gray;
+//     transition: .3s ease;
+
+//     @include mq(md) {
+//         max-width: calc(33.3333% - rem(25) * 2 / 3);
+//         width: 100%;
+//     }
+// }
+
+// .card:hover {
+//     @include mq (md) {
+//         background: $mid-gray;
+//         color: $white;
+//         transition: .3s ease;
+//     }
+// }
+
+// .card__img {
+//     padding-top: 66.567164%; // 223 / 335
+//     position: relative;
+
+//     img {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover; //トリミング
+//     }
+// }
+
+// .p-card__new-icon {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: rem(60);
+//     height: rem(60);
+//     position: absolute;
+//     top: rem(-16);
+//     left: rem(-16);
+//     background: $orange;
+//     border-radius: 50%;/*角丸*/
+//     z-index: 10;
+//     line-height: 60px;
+//     color: $mid-gray;
+//     font-size: rem(16);
+//     font-weight: $font-weight-base;
+//     letter-spacing: rem(2);
+//     text-transform: capitalize;
+
+//     @include mq(tab) {
+//         top: rem(-20);
+//         left: rem(-14);
+//     }
+// }
 
 .p-card__content {
     letter-spacing: rem(1);
@@ -68,6 +109,7 @@
 }
 
 .p-card__title {
+    text-align: center;
     font-size: rem(18);
     font-weight: $medium;
     line-height: rem(35);
@@ -103,7 +145,9 @@
 }
 
 .p-card__category {
-    background: $yellow;
+    background: $orange;
+    border-radius: 2px;
+    // background: $yellow;
     color: $gray;
     padding: 0 rem(3);
     letter-spacing: rem(1);

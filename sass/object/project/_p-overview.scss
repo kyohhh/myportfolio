@@ -15,7 +15,7 @@
     top: rem(-640);
     left: 0;
     z-index: -1;
-    background-image: linear-gradient(to left top, transparent 49.9%, $light-yellow 50%, $light-yellow calc(50.1% + 1px), transparent calc(50.2% + 1px));
+    background-image: linear-gradient(to left top, transparent 50%, $red 50.1%, $red calc(50.15% + 1px), transparent calc(50.2% + 1px));
 
     @include mq (tab) {
         width: 94.6875%;
@@ -46,7 +46,7 @@
 
 .p-overview__item {
     @include mq(tab) {
-        background: linear-gradient(90deg, $mid-gray 0%, $mid-gray 75%, transparent 75%, transparent 100%);
+        background: linear-gradient(90deg, $light-gray 0%, $light-gray 75%, transparent 75%, transparent 100%);
         margin-left: calc(50% - 50vw);
         flex-direction: row-reverse; // 横並び逆順
         display: flex;
@@ -56,6 +56,7 @@
 
 .p-overview__img {
     position: relative;
+    box-shadow: 0px 3px 30px rgba(0,0,0,0.3);
 
     @include mq(tab) {
         max-width: rem(557);
@@ -84,8 +85,9 @@
 }
 
 .p-overview__body {
-    background: $mid-gray;
+    background: $light-gray;
     padding: rem(27) rem(20) rem(21);
+    text-align: center;
 
     @include mq(tab) {
         padding: rem(120) rem(33) rem(119) rem(25);
@@ -97,7 +99,6 @@
 }
 
 .p-overview__title {
-    text-align: center;
     font-size: rem(20);
     font-weight: $font-weight-base;
     line-height: rem(29);

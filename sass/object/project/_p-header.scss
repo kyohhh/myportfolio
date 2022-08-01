@@ -1,5 +1,5 @@
 .p-header {
-    background: rgba($black, 0.4);
+    background: rgba($white, 0.4);
     transition: 0.3s ease;
     position: fixed;
     top: 0;
@@ -12,7 +12,8 @@
 }
 
 .black {
-    background: rgba($black, 1);
+    background: rgba($gray, 1);
+    color: $white;
     transition: 0.3s ease;
 }
 
@@ -31,6 +32,7 @@
 
 .p-header__logo {
     height: inherit;
+    // padding: rem(2) 0;
     z-index: 888;
 }
 
@@ -41,10 +43,11 @@
     height: inherit;
 
     img {
-        width: rem(71);
+        height: inherit;
+        width: rem(55);
 
         @include mq(tab) {
-            width: rem(94);
+            // width: rem(50);
         }
     }
 }

@@ -27,7 +27,7 @@
 }
 
 .c-category__item:nth-child(n + 2) {
-    // margin-left: rem(24);
+    margin-left: rem(10);
 
     @include mq (tab) {
         margin-left: rem(31);
@@ -45,8 +45,8 @@
     }
 }
 
-.c-category__item-link--white {
-    background: $white;
+.c-category__item-link--active {
+    background: $light-gray;
     color: $mid-gray;
     padding: rem(7) rem(8);
     display: inline-block;

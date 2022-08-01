@@ -1,6 +1,8 @@
 .p-main-visual {
     position: relative;
     height: 100vh;
+    text-shadow: 1px 1px 2px $gray;
+
     @include mq(tab) {
         height: 100%;
     }
@@ -9,6 +11,7 @@
 .p-main-visual__text {
     letter-spacing: rem(0.5);
     font-weight: $bold;
+    color: $white;
     z-index: 10;
     width: 100%;
     position: absolute;
@@ -17,6 +20,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     @include mq(tab) {
+        letter-spacing: rem(5);
     }
 }
 

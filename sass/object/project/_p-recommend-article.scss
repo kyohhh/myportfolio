@@ -6,7 +6,7 @@
 
 }
 
-.p-recommend-article__title {
+.p-recommend-article__title{
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     line-height: rem(23);
@@ -15,7 +15,7 @@
     padding: rem(10) 0;
     text-align: center;
     width: 100%;
-    background: $mid-gray;
+    background: $light-gray;
 
     @include mq(tab){
         display: block;

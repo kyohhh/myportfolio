@@ -11,8 +11,8 @@
     text-align: center;
 }
 .p-404__title {
-    color: $yellow;
-    opacity: 0.3;
+    color: $orange;
+    opacity: 0.6;
     font-size: rem(40);
     font-weight: $font-weight-base;
     line-height: rem(35);
@@ -24,7 +24,7 @@
 }
 .p-404__text {
     margin-top: rem(80);
-    color: $white;
+    color: $text-color;
     font-size: rem(20);
     font-weight: $font-weight-base;
     line-height: rem(29);

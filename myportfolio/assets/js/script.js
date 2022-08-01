@@ -64,7 +64,7 @@ jQuery(function ($) {
 		});
 
 
-		// 制作実績詳細
+		// 事業実績詳細
 		let mySwiper3 = new Swiper ('.js-detail-swiper', {
 			loop: true,
 			effect: 'slide',
@@ -120,19 +120,36 @@ jQuery(function ($) {
   // ================
   // headerの透過切り替え
   // ================
+	// トップページ
 	let header = $(".js-top-header");
 	let headerHeight = $(".js-top-header").outerHeight(); //ヘッダーコンテンツ
 	let imgHeight = $(".js-mv").outerHeight() - headerHeight; //画像の高さ取得
-
+	
 	$(window).on('load scroll', function(){
-				if ($(window).scrollTop() < imgHeight) {
+		if ($(window).scrollTop() < imgHeight) {
+			// 指定px以下のスクロールでblackを外す
+			header.removeClass("black")
+		} else {
+			// 指定px以上のスクロールでblackを付与
+			header.addClass("black")
+		}
+	});
+	
+	// トップ以外
+	let subHeader = $(".js-sub-header");
+	let subHeaderHeight = $(".js-sub-header").outerHeight(); //サブヘッダーコンテンツ
+	let subImgHeight = $(".js-sub-mv").outerHeight() - subHeaderHeight; //画像の高さ取得
+	$(window).on('load scroll', function(){
+				if ($(window).scrollTop() < subImgHeight) {
 				// 指定px以下のスクロールでblackを外す
-				header.removeClass("black")
+				subHeader.removeClass("black")
 				} else {
 				// 指定px以上のスクロールでblackを付与
-				header.addClass("black")
+				subHeader.addClass("black")
 				}
 	});
+
+	
 
 		// /* スムーススクロール */
 		// jQuery('a[href^="#"]').click(function() {

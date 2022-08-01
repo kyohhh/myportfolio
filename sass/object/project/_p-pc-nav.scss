@@ -45,7 +45,8 @@
 }
 
 .p-pc-nav__item a:hover::after {
-    background: $yellow;
+    background: $red;
+    // background: $yellow;
 }
 
 
@@ -54,8 +55,8 @@
 }
 
 .p-pc-nav__item--white a {
-    background: $white;
-    color: $mid-gray;
+    background: $red;
+    color: $white;
     padding: 0 rem(34);
     transition: .3s ease;
 }

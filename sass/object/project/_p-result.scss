@@ -2,10 +2,12 @@
 .p-result {
     display: inline-block;
     position: relative;
-    color: $white;
+    // color: $white;
+    box-shadow: 0px 3px 30px rgba(0,0,0,0.3);
     transition: .3s ease;
-
     width: 100%;
+
+
     @include mq(tab) {
     }
 }
@@ -40,6 +42,7 @@
     background: $black;
     z-index: 1;
 
+    color: $white;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
     line-height: rem(23);
@@ -49,10 +52,9 @@
 
 .p-result__content {
     text-align: center;
-    padding-top: rem(24);
+    padding: rem(20) rem(10);
     
     @include mq (tab) {
-        padding-top: rem(12);
     }
 }
 

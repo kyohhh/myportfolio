@@ -3,12 +3,13 @@
     width: 100%;
     padding: rem(9) 0;
     text-align: center;
-    border: 1px solid $white;
-	color: $white;
-
+    border: 2px solid $red;
+    border-radius: 4px;
+	color: $black;
     font-size: rem(20);
     letter-spacing: rem(2);
-    background: $mid-gray;
+    // background: $mid-gray;
+    background: $white;
     z-index: 1;
 
     @include mq(tab) {
@@ -20,7 +21,12 @@
 }
 
 .c-btn:hover {
-    color: $mid-gray;
+    // color: $mid-gray;
+    // color: $white;
+
+    @include mq(tab) {
+        color: $white;
+    }
 }
 
 .c-btn::before {
@@ -31,7 +37,8 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: $white;
+        // background: $white;
+        background: $red;
         transform: translateX(-100%);
         transition: .3s ease;
         z-index: -1;
@@ -46,25 +53,30 @@
     }
 }
 
+
+// new
 .c-btn--news {
 	display: inline-block;
     width: 100%;
     padding: rem(9) 0;
     text-align: center;
-    border: 1px solid $white;
+    border: 1px solid $red;
+    border-radius: 4px;
     font-size: rem(20);
     letter-spacing: rem(2);
-    color: $white;
-    background: $mid-gray;
+    // color: $white;
+    // background: $mid-gray;
+    color: $mid-gray;
+    background: $white;
+    z-index: 1;
 
     @include mq(tab){
         // max-width: rem(134);
+        position: relative;
+        overflow: hidden;
         padding: rem(3) rem(25);
         font-size: rem(16);
         letter-spacing: normal;
-        color: $mid-gray;
-        background: $white;
-        // z-index: 1;
 
     }
 }
@@ -72,6 +84,8 @@
 .c-btn--news:hover {
     @include mq(tab){
         color: $white;
+        // z-index: 10;
+
     }
 }
 
@@ -84,10 +98,11 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: $mid-gray;
+        // background: $mid-gray;
+        background: $red;
         transform: translateX(-100%);
         transition: .3s ease;
-        z-index: 10;
+        z-index: -1;
     }
 }
 
@@ -96,6 +111,6 @@
     @include mq(tab){
         transform: translateX(0);
         transition: .3s ease;
-        z-index: 10;
+        // z-index: -1;
     }
 }

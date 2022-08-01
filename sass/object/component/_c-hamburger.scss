@@ -1,6 +1,6 @@
 $drawer-width: rem(26);
 $drawer-height: rem(2);
-$drawer-color: white;
+$drawer-color: $white;
 
 .c-hamburger {
     z-index: 999;
@@ -19,6 +19,7 @@ $drawer-color: white;
     border-radius: rem(1); /* 線幅の半分 */
     background: $drawer-color;
     transition: ease .3s;
+    box-shadow: 0px 5px 5px $black;
 }
 
 .c-hamburger span:nth-child(1) {

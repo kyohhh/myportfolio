@@ -19,9 +19,9 @@ $contact = esc_url( home_url( '/contact/' ) );
         <div class="p-main-visual__content swiper-slide">
             <div class="p-main-visual__item slide-img">
                 <picture class="p-main-visual__img">
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv01.jpg"
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/pc-mv01.jpg"
                         media="(min-width: 768px)"><!-- ○○px以上で表示する画像 -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv01-sp.jpg" alt="メイン画像1">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/sp-mv01.jpg" alt="メイン画像1">
                     <!-- それ以外の場合に表示する画像 -->
                 </picture>
             </div>
@@ -29,9 +29,9 @@ $contact = esc_url( home_url( '/contact/' ) );
         <div class="p-main-visual__content swiper-slide">
             <div class="p-main-visual__item slide-img">
                 <picture class="p-main-visual__img">
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv02.jpg"
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/pc-mv02.jpg"
                         media="(min-width: 768px)"><!-- ○○px以上で表示する画像 -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv02-sp.jpg" alt="メイン画像2">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/sp-mv02.jpg" alt="メイン画像2">
                     <!-- それ以外の場合に表示する画像 -->
                 </picture>
             </div>
@@ -39,9 +39,9 @@ $contact = esc_url( home_url( '/contact/' ) );
         <div class="p-main-visual__content swiper-slide">
             <div class="p-main-visual__item slide-img">
                 <picture class="p-main-visual__img">
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv03.jpg"
+                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/pc-mv03.jpg"
                         media="(min-width: 768px)"><!-- ○○px以上で表示する画像 -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/mv03-sp.jpg" alt="メイン画像3">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/sp-mv03.jpg" alt="メイン画像3">
                     <!-- それ以外の場合に表示する画像 -->
                 </picture>
             </div>
@@ -113,25 +113,25 @@ $contact = esc_url( home_url( '/contact/' ) );
     <div class="p-content__items">
         <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content01.jpg" alt="経営理念ページへ">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/content1.jpg" alt="経営理念ページへ">
                 <p class="p-content__imgtitle">経営理念</p>
             </figure>
         </a>
         <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content02.jpg" alt="理念1へ">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/content2.jpg" alt="理念1へ">
                 <p class="p-content__imgtitle">誠実であること</p>
             </figure>
         </a>
         <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content03.jpg" alt="理念2へ">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/content3.jpg" alt="理念2へ">
                 <p class="p-content__imgtitle">共に歩むこと</p>
             </figure>
         </a>
         <a href="<?php echo $content ?>" class="p-content__item">
             <figure class="p-content__img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/content04.jpg" alt="理念3へ">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/content4.jpg" alt="理念3へ">
                 <p class="p-content__imgtitle">挑戦すること</p>
             </figure>
         </a>
@@ -139,7 +139,6 @@ $contact = esc_url( home_url( '/contact/' ) );
 </section>
 <!-- /content -->
 <!-- /経営理念 -->
-
 
 <!-- works -->
 <!-- 事業実績 -->
@@ -150,21 +149,30 @@ $contact = esc_url( home_url( '/contact/' ) );
             <span class="c-section-header__subtitle c-section-header__subtitle--right">works</span>
         </div>
         <div class="p-works__item">
-
-            <!-- カスタム投稿タイプの記事の新着一覧を表示 -->
-            <?php $posts = get_posts('post_type=works&posts_per_page=1'); ?>
-            <?php if (!empty($posts)): ?>
-
             <!-- swiper -->
             <div class="p-works__block swiper-container swiper-container--works">
                 <div class="p-works__content swiper swiper--works js-works-swiper">
                     <div class="p-works__imgs swiper-wrapper">
 
+                        <?php
+                        $works_query = new WP_Query(
+                            array(
+                            'post_type'      => 'works',
+                            'posts_per_page' => 3, //表示したい件数
+                            )
+                        );
+                        ?>
+                        <?php if ($works_query->have_posts()) : ?>
+                        <?php while ($works_query->have_posts()) : ?>
+                        <?php $works_query->the_post(); ?>
 
-                        <?php foreach ($posts as $post):setup_postdata($post); ?>
                         <div class="p-works__img swiper-slide swiper-slide--works js-works-slide">
                             <img src="<?php echo get_the_post_thumbnail(); ?>" alt="事業実績画像">
                         </div>
+
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
 
 
                     </div>
@@ -174,19 +182,14 @@ $contact = esc_url( home_url( '/contact/' ) );
             </div>
             <!-- /swiper -->
             <div class="p-works__body">
-                <h3 class="p-works__title"><?php the_title(); ?></h3>
+                <h3 class="p-works__title">事業実績掲載中</h3>
                 <p class="p-works__text">
-                    <?php the_excerpt(); ?>
+                    弊社の事業実績を多数掲載しております。。ぜひ、ご覧くださいま。。
                 </p>
                 <div class="p-works__btn">
                     <a href="<?php echo $works ?>" class="c-btn">詳しく見る</a>
                 </div>
             </div>
-
-            <?php endforeach; ?>
-            <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
-            <!-- /カスタム投稿タイプの記事の新着一覧を表示 -->
 
         </div>
     </div>
@@ -206,7 +209,7 @@ $contact = esc_url( home_url( '/contact/' ) );
         <div class="p-overview__items">
             <div class="p-overview__item">
                 <figure class="p-overview__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/overview.jpg" alt="企業概要">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/overview.jpg" alt="企業概要">
                 </figure>
                 <div class="p-overview__body">
                     <h3 class="p-overview__title">新井商事</h3>

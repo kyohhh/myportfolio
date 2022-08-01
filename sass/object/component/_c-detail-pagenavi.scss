@@ -10,7 +10,7 @@
 
 .c-detail-pagenavi__link {
     text-transform: uppercase;
-    border: 1px solid $white;
+    border: 1px solid $light-gray;
     padding: rem(3) rem(13);
     margin: 0 rem(24);
 
@@ -18,7 +18,20 @@
     font-weight: $font-weight-base;
     line-height: rem(23);
     letter-spacing: rem(2);
+    transition: 0.2s ease-in-out;
+
 
     @include mq(tab){
     }
 }
+
+.c-detail-pagenavi__link:hover{
+	color: $white;
+	background-color: $light-red;
+    opacity: 0.8;
+	border-color: $light-red;
+    transition: 0.2s ease-in-out;
+}
+
+
+

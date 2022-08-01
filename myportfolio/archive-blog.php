@@ -5,12 +5,15 @@
 <div class="p-sub-visual js-sub-mv">
     <div class="p-sub-visual__inner">
         <div class="p-sub-visual__content">
-            <picture class="p-sub-visual__img">
-                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/blog/img-blog.jpg"
-                    media="(min-width: 768px)"><!-- ○○px以上で表示する画像 -->
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/img-blog-sp.jpg" alt="サブビジュアル">
-                <!-- それ以外の場合に表示する画像 -->
-            </picture>
+            <div class="p-sub-visual__img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sub/sv.jpg" alt="サブビジュアル">
+            </div>
+            <!-- safari / firefoxで表示されない pictureタグと疑似要素？？ -->
+            <!-- <picture class="p-sub-visual__img">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/sub/sv.jpg"
+                    media="(min-width: 768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sub/sv-sp.jpg" alt="サブビジュアル">
+            </picture> -->
         </div>
         <div class="p-sub-visual__text">
             <p class="p-sub-visual__title"><?php post_type_archive_title(); ?></p>
@@ -48,7 +51,7 @@
             <ul class="c-category__list">
                 <li class="c-category__item">
                     <a href="<?php echo esc_url(get_post_type_archive_link('blog')); ?>"
-                        class="c-category__item-link--white">ALL</a>
+                        class="c-category__item-link--active">ALL</a>
                 </li>
 
                 <?php
@@ -80,7 +83,16 @@
                 </figure>
                 <div class="p-card__content">
                     <div class="p-card__body">
-                        <h3 class="p-card__title"><?php the_title(); ?></h3>
+                        <h3 class="p-card__title">
+                            <?php
+                                if(mb_strlen($post->post_title)>10) {
+                                $title= mb_substr($post->post_title,0,10) ;
+                                    echo $title . '...';
+                                } else {
+                                    echo $post->post_title;
+                                }
+                            ?>
+                        </h3>
                         <p class="p-card__text"><?php the_excerpt(); ?></p>
                     </div>
                     <div class="p-card__info">
@@ -112,10 +124,10 @@
             <span class="c-section-header__subtitle c-section-header__subtitle--contact">contact</span>
         </div>
         <div class="p-contact__body">
-            <div class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+            <div class="p-contact__text">お気軽にお問合せください。次の100年を一緒に歩んでくださる皆さまをお待ちしております。</div>
         </div>
         <div class="p-contact__btn">
-            <a href="#" class="c-btn">お問い合わせへ</a>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">お問い合わせへ</a>
         </div>
     </div>
 </section>

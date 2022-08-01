@@ -80,7 +80,7 @@
         <div class="p-header__inner">
             <h1 class="p-header__logo">
                 <a href="<?php echo esc_url( home_url('/')); ?>" class="p-header__link">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.png" alt="新井商事ロゴ">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/logo1.png" alt="新井商事ロゴ">
                 </a>
             </h1>
 

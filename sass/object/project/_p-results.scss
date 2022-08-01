@@ -25,14 +25,8 @@
 //tab
 //////////
 
-.p-results__item:nth-child(even) {
-    @include mq(tab) {
-        margin-left: rem(48);
-    }
-}
-
 .p-results__item:nth-child(n + 3) {
     @include mq(tab) {
-        margin-top: rem(114);
+        margin-top: rem(30);
     }
 }

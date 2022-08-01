@@ -7,7 +7,7 @@
             <div class="p-footer__content">
                 <h1 class="p-footer__logo">
                     <a href="<?php echo esc_url( home_url('/')); ?>" class="p-footer__link">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="会社名">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/logo1.png" alt="新井商事ロゴ">
                     </a>
                 </h1>
                 <nav class="p-footer__nav p-footer-nav">
@@ -35,7 +35,7 @@
                     </ul> -->
                 </nav>
             </div>
-            <p class="p-footer__copy">&copy; 2021 Code Ups Inc.</p>
+            <p class="p-footer__copy">&copy; 2022 新井商事 Inc.</p>
         </div>
     </footer>
     <?php wp_footer(); ?>
